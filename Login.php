@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
             </button>
             <a  style="color:rgb(8,134,202);margin-right:50px;margin-bottom: 12px;"
-                class="navbar-brand webSiteNameFont" href="#">Route</a>
+                class="navbar-brand webSiteNameFont" href="index.php">Route</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
