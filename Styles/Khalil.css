@@ -156,6 +156,14 @@ height: 113px;
 }
 
 
+#panelBoard{
+
+    background-color:rgb(10,36,64);
+    margin-left:20px;margin-right:20px;
+    margin-top:20px;
+    height: 450px;
+
+}
 
 #panelItemsContainer{
     min-height: 142px;
@@ -307,7 +315,6 @@ input[type=submit]:hover {
     background-color: rgb(35,40,45);
 
 
-    min-height: 900px;
 
 }
 

@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Styles/Khalil.css">
-
+    <script src="Scripts/controlPanelEvents.js"></script>
 
 
 </head>
@@ -81,10 +81,16 @@
     </div>
 
 
+
 </div>
+    <div style="padding: 0px;" id="panelBoard" class="container-fluid boxShadowTransparent"></div>
+
 
 </div>
 
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMap"
+        async defer></script>
 
 </body>
 
