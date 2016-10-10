@@ -83,7 +83,7 @@
 
 
 </div>
-    <div style="padding: 0px;" id="panelBoard" class="container-fluid boxShadowTransparent"></div>
+    <div style="padding: 0px;" id="studentPanelBoard" class="container-fluid boxShadowTransparent"></div>
 
 
 </div>

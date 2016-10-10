@@ -5,8 +5,10 @@
 
 
 function initMapStudent() {
+
     // Styles a map in night mode.
-    var map = new google.maps.Map(document.getElementById('panelBoard'), {
+
+    var map = new google.maps.Map(document.getElementById('studentPanelBoard'), {
         center: {lat: 40.674, lng: -73.945},
         zoom: 12,
         styles: [
