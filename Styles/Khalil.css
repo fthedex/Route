@@ -135,11 +135,6 @@ html, body {
 
 }
 
-.testGit{
-    
-}
-
-
 .pHeader{
     font-family: 'Oswald', sans-serif;
      color:white;
@@ -160,13 +155,6 @@ font-size: 20px;
 height: 113px;
 }
 
-.webSiteNameFont{
-!important;
-
-    font-family: 'Lobster', cursive;
-font-size: 5em;
-    color: red;
-}
 
 
 #panelItemsContainer{
@@ -179,6 +167,15 @@ position: relative;
 
 
 /*Usable classes*/
+
+.webSiteNameFont{
+!important;
+
+    font-family: 'Lobster', cursive;
+    font-size: 5em;
+    color: red;
+}
+
 
 .controlPanelItem   span {
     color:rgb(8,134,202);
