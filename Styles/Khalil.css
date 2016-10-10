@@ -156,13 +156,27 @@ height: 113px;
 }
 
 
-#panelBoard{
+#studentPanelBoard{
 
     background-color:rgb(10,36,64);
     margin-left:20px;margin-right:20px;
     margin-top:20px;
     height: 450px;
 
+}
+
+#parentsPanelBoard{
+    background-color:rgb(10,36,64);
+    margin-left:20px;margin-right:20px;
+    margin-top:20px;
+    min-height: 450px;
+}
+
+#driverPanelBoard{
+    background-color:rgb(10,36,64);
+    margin-left:20px;margin-right:20px;
+    margin-top:20px;
+    min-height: 450px;
 }
 
 #panelItemsContainer{

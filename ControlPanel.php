@@ -88,9 +88,12 @@
 
 </div>
 
+<?php
+if(true)
+    echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMapStudent'
+        async defer></script>"
+?>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMapStudent"
-        async defer></script>
 
 </body>
 
