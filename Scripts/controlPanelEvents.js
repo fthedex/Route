@@ -2,7 +2,9 @@
  * Created by Khalil on 10/10/2016.
  */
 
-function initMap() {
+
+
+function initMapStudent() {
     // Styles a map in night mode.
     var map = new google.maps.Map(document.getElementById('panelBoard'), {
         center: {lat: 40.674, lng: -73.945},
@@ -89,3 +91,15 @@ function initMap() {
         ]
     });
 }
+
+
+$( document ).ready(function() {
+
+
+
+
+    $("#showMapStudent").click(function(){
+        initMapStudent();
+    });
+});
+

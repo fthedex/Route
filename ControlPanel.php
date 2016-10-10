@@ -57,18 +57,18 @@
         <div id="innnerMap" class="centerElement">
             <span class="glyphicon glyphicon-map-marker"></span>
             <br>
-            <p class="pGlobalFont">Route</p>
+            <p class="pGlobalFont">Route(Map)</p>
         </div>
 
 
     </div>
 
 
-    <div class="controlPanelItem">
+    <div id="showMapStudent" class="controlPanelItem">
         <div id="innerShowBusStudent" class="centerElement">
             <span class="glyphicon glyphicon-bed"></span>
             <br>
-            <p class="pGlobalFont textAlignCenter">Your bus</p>
+            <p class="pGlobalFont textAlignCenter">Your map</p>
         </div>
     </div>
 
@@ -76,7 +76,7 @@
         <div id="innerShowBusesFamily" class="centerElement">
             <span class="glyphicon glyphicon-bed"></span>
             <br>
-            <p class="pGlobalFont textAlignCenter">Children Buses</p>
+            <p class="pGlobalFont textAlignCenter">Children maps</p>
         </div>
     </div>
 
@@ -89,7 +89,7 @@
 </div>
 
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMap"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMapStudent"
         async defer></script>
 
 </body>

@@ -197,7 +197,7 @@ width:142px;
    margin:5px;
     position: relative;
     cursor: pointer;
-    border: 1px solid grey;
+    /*border: 1px solid grey;*/
 
 }
 
@@ -207,6 +207,7 @@ width:142px;
 }
 
 .controlPanelItem:hover{
+
 
     background-color: rgb(2, 35, 52);
 }
