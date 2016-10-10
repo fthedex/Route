@@ -90,7 +90,7 @@
 
 <?php
 if(true)
-    echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyD2IY7bt6uTYoxCkbiru1lex6VDFQblc4c&callback=initMapStudent'
+    echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapStudent'
         async defer></script>"
 ?>
 
