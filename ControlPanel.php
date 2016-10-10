@@ -23,26 +23,26 @@
                 <span class="icon-bar"></span>
             </button>
             <a  style="color:rgb(8,134,202);margin-right:50px;margin-bottom: 12px;"
-                class="navbar-brand webSiteNameFont" href="#">Route</a>
+                class="navbar-brand webSiteNameFont" href="/Route">Route</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="#">HOME</a></li>
+    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">HOME</a></li>
 
                 <li style="min-height: 60px;"  ><a class="shadowDagger"  style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="#">CONTACT</a></li>
+    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">CONTACT</a></li>
                 <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="#">CONTROL PANEL</a></li>
+    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="ControlPanel.php">CONTROL PANEL</a></li>
 
                 <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="#">ABOUT US</a></li>
+    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">ABOUT US</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
                 <li><a onmouseover="this.style.color='#00bd0a'" onmouseleave="this.style.color='white'"style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
