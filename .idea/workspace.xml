@@ -32,6 +32,8 @@
       <file leaf-file-name="Khalil.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Styles/Khalil.css">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2234">
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -271,6 +273,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="66823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="7" width="1361" height="737" extended-state="0" />
@@ -719,6 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Styles/Khalil.css">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2234">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
           <folding />
         </state>
       </provider>
