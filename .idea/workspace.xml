@@ -54,8 +54,8 @@
       <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="338">
+              <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
               <folding>
                 <marker date="1476219616801" expanded="true" signature="491:546" ph="SELECT usern... userInfo" />
                 <marker date="1476219616801" expanded="true" signature="491:547" ph="SELECT usern... userinfo" />
@@ -311,12 +311,12 @@
       <workItem from="1476090600925" duration="5446000" />
       <workItem from="1476117400188" duration="2038000" />
       <workItem from="1476164205056" duration="552000" />
-      <workItem from="1476200372646" duration="13960000" />
+      <workItem from="1476200372646" duration="14233000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89257000" />
+    <option name="totallyTimeSpent" value="89530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -751,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="338">
+          <caret line="90" column="9" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
           <folding>
             <marker date="1476219616801" expanded="true" signature="491:546" ph="SELECT usern... userInfo" />
             <marker date="1476219616801" expanded="true" signature="491:547" ph="SELECT usern... userinfo" />
