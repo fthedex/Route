@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 /**
  * Created by PhpStorm.
  * User: Khalil
@@ -57,11 +59,17 @@ if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //mean
        setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
        setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
 
-       
+       $_SESSION["routeUsername"] = $username;
+       $_SESSION["routePassword"] = $password;
+
 
    }
    else{
        //invalid info
    }
+
+}
+else{  //if he is either logged in and has an active session or he came after his session got destroyed , we have to sync here
+
 
 }
