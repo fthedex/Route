@@ -52,20 +52,25 @@ return false;
 
 }
 
+$username = $_POST['username'];
+$password = $_POST['password'];
+
 if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //means he is logging-in for the first time
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+
    if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
        setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
        setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
 
        $_SESSION["routeUsername"] = $username;
        $_SESSION["routePassword"] = $password;
-
+       echo "Welcome";
+       header("location:ControlPanel.php");
+       exit();
 
    }
    else{
-       echo "Please login in order to continue!";
+       //Invalid Info
+       echo "Please Enter Valid username and password!";
        header("location:Login.php");
        exit();
    }
@@ -75,25 +80,26 @@ else{  //if he is either logged in and has an active session or he came after hi
 
     if( !isset($_SESSION["routeUsername"])&&!isset($_SESSION['routePassword']) ){
 
-        if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
+        if(validInfoFromDb($_COOKIE['routeUsername'],$_COOKIE['routePassword'])){       //if his information valid then we can do our operations
 
-            $_SESSION["routeUsername"] = $username;
-            $_SESSION["routePassword"] = $password;
+            $_SESSION["routeUsername"] = $_COOKIE['routeUsername'];
+            $_SESSION["routePassword"] = $_COOKIE['routePassword'];
 
 
         }
         else
         {
-            echo "Please Login to the system.";   //cookie is incorrect
+            echo "Please Login to the system again , cookies are not right.";   //cookie is incorrect
             header("location:Login.php");
             exit();
         }
 
-        header("location:main_login.html");
-        exit();
+
     }
     else{  //user is online
         echo "user is online";
+        header("location:ControlPanel.php");
+        exit();
     }
 
 }
