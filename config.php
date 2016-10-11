@@ -103,4 +103,4 @@ else{  //if he is either logged in and has an active session or he came after hi
         exit();
     }
 
-}
+} // bug when cookie and true user,pass is set and sessions is destroyed

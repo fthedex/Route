@@ -28,7 +28,7 @@ if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
     exit();
 }
 else{
-    echo "not set!";
+ // if cookie is set but session destroyed , u gotta check if cookie is right and redirect him!
 }
 
 
