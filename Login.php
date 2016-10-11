@@ -53,19 +53,21 @@
 
 <div class="loginBody container-fluid padding20">
 <br><br><br>
+    <form action="config.php" method="post">
     <div class="loginContainer padding10 textAlignCenter">
 
         <p style="display:inline-block;" class="webSiteNameFont">Route<br></p>
         <p class="pGlobalFont">Account Authentication:<br></p><hr>
         <label  class="pGlobalFont floatLeft" for="username">USERNAME:</label>
-        <input type="text" id="username" name="username">
+        <input required type="text" id="username" name="username" minlength="5" maxlength="14">
 <br>
         <label  class="pGlobalFont floatLeft" for="username">PASSWORD:</label>
-        <input type="password" id="password" name="password">
+        <input required type="password" id="password" name="password" minlength="5" maxlength="30">
 
         <br>
         <input type="submit" value="Submit">
     </div>
+    </form>
     
 </div>
 
