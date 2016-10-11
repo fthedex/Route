@@ -65,11 +65,35 @@ if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //mean
 
    }
    else{
-       //invalid info
+       echo "Please login in order to continue!";
+       header("location:Login.php");
+       exit();
    }
 
 }
 else{  //if he is either logged in and has an active session or he came after his session got destroyed , we have to sync here
 
+    if( !isset($_SESSION["routeUsername"])&&!isset($_SESSION['routePassword']) ){
+
+        if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
+
+            $_SESSION["routeUsername"] = $username;
+            $_SESSION["routePassword"] = $password;
+
+
+        }
+        else
+        {
+            echo "Please Login to the system.";   //cookie is incorrect
+            header("location:Login.php");
+            exit();
+        }
+
+        header("location:main_login.html");
+        exit();
+    }
+    else{  //user is online
+        echo "user is online";
+    }
 
 }
