@@ -52,11 +52,11 @@ return false;
 
 }
 
-$username = $_POST['username'];
-$password = $_POST['password'];
+
 
 if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //means he is logging-in for the first time
-
+    $username = $_POST['username'];
+    $password = $_POST['password'];
    if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
        setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
        setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
