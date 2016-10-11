@@ -1,3 +1,8 @@
+<?php
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +19,23 @@
 
 </head>
 <body>
+<?php
+
+
+if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
+
+    header("location:ControlPanel.php");
+    exit();
+}
+else{
+    echo "not set!";
+}
+
+
+
+?>
+
+
 <nav id="pageNav" style="z-index: 99;position:fixed;width:100%;padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
