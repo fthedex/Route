@@ -39,20 +39,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ControlPanel.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ControlPanel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ControlPanel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state relative-caret-position="386">
+              <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
               <folding>
                 <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-                <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-                <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-                <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-                <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+                <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+                <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
               </folding>
             </state>
           </provider>
@@ -68,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="-944">
+              <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
               <folding>
                 <marker date="1476288531356" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
               </folding>
@@ -83,16 +84,19 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="101" column="286" selection-start-line="101" selection-start-column="286" selection-end-line="101" selection-end-column="286" />
+            <state relative-caret-position="205">
+              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
               <folding>
                 <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1476285967024" expanded="true" signature="991:1061" ph="SELECT usern... userinfo" />
-                <marker date="1476285967024" expanded="true" signature="4504:4802" ph="..." />
-                <marker date="1476285967024" expanded="false" signature="4600:4714" ph="..." />
-                <marker date="1476285967024" expanded="true" signature="4982:5092" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="992:1062" ph="SELECT usern... userinfo" />
+                <marker date="1476293413243" expanded="true" signature="4506:4699" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="4506:4701" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="4506:4749" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="4519:4646" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="4788:5083" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="4880:4994" ph="..." />
+                <marker date="1476293413243" expanded="true" signature="5263:5373" ph="..." />
               </folding>
             </state>
           </provider>
@@ -149,9 +153,9 @@
         <option value="$PROJECT_DIR$/Scripts/controlPanelEvents.js" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/logout.php" />
+        <option value="$PROJECT_DIR$/Login.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ControlPanel.php" />
-        <option value="$PROJECT_DIR$/Login.php" />
       </list>
     </option>
   </component>
@@ -342,12 +346,12 @@
       <workItem from="1476164205056" duration="552000" />
       <workItem from="1476200372646" duration="16520000" />
       <workItem from="1476250935638" duration="1651000" />
-      <workItem from="1476265773961" duration="9199000" />
+      <workItem from="1476265773961" duration="11271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102667000" />
+    <option name="totallyTimeSpent" value="104739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -448,11 +452,14 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476285967024" expanded="true" signature="991:1061" ph="SELECT usern... userinfo" />
-            <marker date="1476285967024" expanded="true" signature="4504:4802" ph="..." />
-            <marker date="1476285967024" expanded="false" signature="4600:4714" ph="..." />
-            <marker date="1476285967024" expanded="true" signature="4982:5092" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="992:1062" ph="SELECT usern... userinfo" />
+            <marker date="1476293413243" expanded="true" signature="4506:4699" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4701" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4749" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4519:4646" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4788:5083" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4880:4994" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="5263:5373" ph="..." />
           </folding>
         </state>
       </provider>
@@ -464,12 +471,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -497,12 +505,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -524,11 +533,14 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476285967024" expanded="true" signature="991:1061" ph="SELECT usern... userinfo" />
-            <marker date="1476285967024" expanded="true" signature="4504:4802" ph="..." />
-            <marker date="1476285967024" expanded="false" signature="4600:4714" ph="..." />
-            <marker date="1476285967024" expanded="true" signature="4982:5092" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="992:1062" ph="SELECT usern... userinfo" />
+            <marker date="1476293413243" expanded="true" signature="4506:4699" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4701" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4749" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4519:4646" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4788:5083" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4880:4994" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="5263:5373" ph="..." />
           </folding>
         </state>
       </provider>
@@ -548,12 +560,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -573,12 +586,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -598,12 +612,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -623,12 +638,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -648,12 +664,13 @@
           <folding>
             <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
@@ -816,22 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="101" column="286" selection-start-line="101" selection-start-column="286" selection-end-line="101" selection-end-column="286" />
-          <folding>
-            <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476285967024" expanded="true" signature="991:1061" ph="SELECT usern... userinfo" />
-            <marker date="1476285967024" expanded="true" signature="4504:4802" ph="..." />
-            <marker date="1476285967024" expanded="false" signature="4600:4714" ph="..." />
-            <marker date="1476285967024" expanded="true" signature="4982:5092" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -855,29 +856,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ControlPanel.php">
+    <entry file="file://$PROJECT_DIR$/Login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="-944">
+          <caret line="23" column="27" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding>
-            <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1476286836539" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
-            <marker date="1476286836539" expanded="true" signature="4665:4963" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="4761:4875" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="5131:5241" ph="..." />
-            <marker date="1476286836539" expanded="true" signature="6900:6929" ph="..." />
+            <marker date="1476288531356" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state relative-caret-position="205">
+          <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
           <folding>
-            <marker date="1476288531356" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
+            <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#nav#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1476293413243" expanded="true" signature="992:1062" ph="SELECT usern... userinfo" />
+            <marker date="1476293413243" expanded="true" signature="4506:4699" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4701" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4506:4749" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4519:4646" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4788:5083" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="4880:4994" ph="..." />
+            <marker date="1476293413243" expanded="true" signature="5263:5373" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ControlPanel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="140" column="18" selection-start-line="140" selection-start-column="18" selection-end-line="140" selection-end-column="18" />
+          <folding>
+            <element signature="n#validInfoFromDb#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1476293746070" expanded="true" signature="1049:1119" ph="SELECT usern... userinfo" />
+            <marker date="1476293746070" expanded="true" signature="4665:4908" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4678:4805" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="4943:5238" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5035:5149" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="5406:5516" ph="..." />
+            <marker date="1476293746070" expanded="true" signature="7175:7204" ph="..." />
           </folding>
         </state>
       </provider>
