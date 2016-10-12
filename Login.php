@@ -15,7 +15,53 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="Styles/Khalil.css">
 
+    <?php
 
+    function validInfoFromDb($userInfoName,$userInfoPassword){
+
+
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "routedb";
+
+// Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+
+                if($row['password']==$userInfoPassword){
+                    echo "TRUE";
+                    $conn->close();
+                    return true;
+                }
+                else{
+                    echo "FALSE";
+                    $conn->close();
+                    return false;
+
+                }
+            }
+        } else {
+            echo "0 results";
+
+
+        }
+        return false;
+        $conn->close();
+
+    }
+
+    ?>
 
 </head>
 <body>
@@ -29,6 +75,30 @@ if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
 }
 else{
  // if cookie is set but session destroyed , u gotta check if cookie is right and redirect him!
+
+    if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){ //means he is logging-in for the first time
+        $username = $_COOKIE['routeUsername'];
+        $password = $_COOKIE['routePassword'];
+        if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
+            setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
+            setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
+
+            $_SESSION["routeUsername"] = $username;
+            $_SESSION["routePassword"] = $password;
+            echo "Welcome";
+            header("location:ControlPanel.php");
+            exit();
+
+        }
+        else{
+            //Invalid Info
+            echo "Please Enter Valid username and password!";
+            header("location:Login.php");
+            exit();
+        }
+
+    }
+
 }
 
 
