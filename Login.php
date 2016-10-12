@@ -157,7 +157,7 @@ else{
         <input required type="password" id="password" name="password" minlength="5" maxlength="30">
 
         <br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Login">
     </div>
     </form>
     
