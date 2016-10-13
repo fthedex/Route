@@ -72,7 +72,7 @@ if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //mean
    else{
        //Invalid Info
        echo "Please Enter Valid username and password!";
-       header("location:Login.php");
+       header("location:Login.php?err=2&user=".$username);
        exit();
    }
 
@@ -91,7 +91,7 @@ else{  //if he is either logged in and has an active session or he came after hi
         else
         {
             echo "Please Login to the system again , cookies are not right.";   //cookie is incorrect
-            header("location:Login.php");
+            header("location:Login.php?err=2&user=".$_COOKIE['routeUsername']);    // code 1= he is not found , 2 = wrong pass 3 = not found
             exit();
         }
 

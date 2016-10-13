@@ -151,12 +151,30 @@ else{
         <p style="display:inline-block;" class="webSiteNameFont">Route<br></p>
         <p class="pGlobalFont">Account Authentication:<br></p><hr>
         <label  class="pGlobalFont floatLeft" for="username">USERNAME:</label>
-        <input required type="text" id="username" name="username" minlength="5" maxlength="14">
+        <?php
+
+        if(count($_GET)>1){   //if in the parameters we have more than one which will be exactly two
+            if($_GET['err']==2){  //if his information are valid then keep the username for him and give him another try
+echo "<input required type='text' id='username' name='username' minlength='5' maxlength='14' value=".$_GET['user'].">";
+            }}
+        else{
+            echo "<input required type='text' id='username' name='username' minlength='5' maxlength='14'>";
+        }
+
+        ?>
+
 <br>
         <label  class="pGlobalFont floatLeft" for="username">PASSWORD:</label>
         <input required type="password" id="password" name="password" minlength="5" maxlength="30">
 
         <br>
+        <?php
+
+        if(count($_GET)>0){
+        if($_GET['err']==2){ //if his information are invalid give him an error message 
+            echo "<p style='color:red;' class='pGlobalFont'>Invalid Information</p>";
+        }}
+        ?>
         <input type="submit" value="Login">
     </div>
     </form>
