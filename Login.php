@@ -171,7 +171,7 @@ echo "<input required type='text' id='username' name='username' minlength='5' ma
         <?php
 
         if(count($_GET)>0){
-        if($_GET['err']==2){ //if his information are invalid give him an error message 
+        if($_GET['err']==2){ //if his information are invalid give him an error message
             echo "<p style='color:red;' class='pGlobalFont'>Invalid Information</p>";
         }}
         ?>
