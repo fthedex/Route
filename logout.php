@@ -11,7 +11,7 @@ session_start();
 
 //check if they are set and unset them
 
-    if (isset($_COOKIE['routeUsername']) && isset($_COOKIE['routePassword'])) { //means he is logging-in for the first time
+    if (isset($_COOKIE['routeUsername']) && isset($_COOKIE['routePassword'])) {
 
         unset($_COOKIE['routeUsername']);
         unset($_COOKIE['routePassword']);
@@ -19,14 +19,20 @@ session_start();
         setcookie('routePassword', null, -1, '/');
 
 
-echo "UNSET COOKIES";
+
     }
+
+    //unsetting and destroy all server sessions
 
     session_unset();
     session_destroy();
 
 
-
+//user is now logged-out
 
 header("location:/Route/");
+
+//redirect user to home page
+
+
 exit();
