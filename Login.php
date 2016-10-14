@@ -85,7 +85,7 @@ else{
 
             $_SESSION["routeUsername"] = $username;
             $_SESSION["routePassword"] = $password;
-            echo "Welcome";
+
             header("location:ControlPanel.php");
             exit();
 

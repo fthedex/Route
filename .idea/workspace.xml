@@ -68,20 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2703">
-              <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
+            <state relative-caret-position="226">
+              <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
               <folding>
-                <marker date="1476345179637" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
-                <marker date="1476345179637" expanded="true" signature="6504:6514" ph="..." />
+                <marker date="1476431797079" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
+                <marker date="1476431797079" expanded="true" signature="6477:6487" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
@@ -125,9 +125,9 @@
         <option value="$PROJECT_DIR$/Scripts/controlPanelEvents.js" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/ControlPanel.php" />
-        <option value="$PROJECT_DIR$/Login.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/logout.php" />
+        <option value="$PROJECT_DIR$/Login.php" />
       </list>
     </option>
   </component>
@@ -321,12 +321,12 @@
       <workItem from="1476265773961" duration="12772000" />
       <workItem from="1476336813639" duration="1257000" />
       <workItem from="1476342434228" duration="2436000" />
-      <workItem from="1476427846422" duration="3057000" />
+      <workItem from="1476427846422" duration="3738000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112990000" />
+    <option name="totallyTimeSpent" value="113671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -414,8 +414,8 @@
         <state relative-caret-position="95">
           <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
           <folding>
-            <marker date="1476345179637" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
-            <marker date="1476345179637" expanded="true" signature="6504:6514" ph="..." />
+            <marker date="1476431797079" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
+            <marker date="1476431797079" expanded="true" signature="6477:6487" ph="..." />
           </folding>
         </state>
       </provider>
@@ -494,8 +494,8 @@
         <state relative-caret-position="918">
           <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
           <folding>
-            <marker date="1476345179637" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
-            <marker date="1476345179637" expanded="true" signature="6504:6514" ph="..." />
+            <marker date="1476431797079" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
+            <marker date="1476431797079" expanded="true" signature="6477:6487" ph="..." />
           </folding>
         </state>
       </provider>
@@ -818,17 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2703">
-          <caret line="164" column="0" selection-start-line="164" selection-start-column="0" selection-end-line="164" selection-end-column="0" />
-          <folding>
-            <marker date="1476345179637" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
-            <marker date="1476345179637" expanded="true" signature="6504:6514" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -866,6 +855,17 @@
             <marker date="1476293413243" expanded="true" signature="4788:5083" ph="..." />
             <marker date="1476293413243" expanded="true" signature="4880:4994" ph="..." />
             <marker date="1476293413243" expanded="true" signature="5263:5373" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="85" column="51" selection-start-line="85" selection-start-column="51" selection-end-line="85" selection-end-column="51" />
+          <folding>
+            <marker date="1476431797079" expanded="true" signature="1017:1087" ph="SELECT usern... userinfo" />
+            <marker date="1476431797079" expanded="true" signature="6477:6487" ph="..." />
           </folding>
         </state>
       </provider>
