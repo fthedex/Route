@@ -1,5 +1,12 @@
 <?php
 session_start();
+require "user.php";
+$globalUser = new user;
+if($globalUser->loggedIn()){
+
+    header("location:ControlPanel.php");
+    exit();
+}
 ?>
 
 
@@ -65,45 +72,6 @@ session_start();
 
 </head>
 <body>
-<?php
-
-
-if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
-
-    header("location:ControlPanel.php");
-    exit();
-}
-else{
- // if cookie is set but session destroyed , u gotta check if cookie is right and redirect him!
-
-    if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){ //means he is logging-in for the first time
-        $username = $_COOKIE['routeUsername'];
-        $password = $_COOKIE['routePassword'];
-        if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
-            setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
-            setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
-
-            $_SESSION["routeUsername"] = $username;
-            $_SESSION["routePassword"] = $password;
-
-            header("location:ControlPanel.php");
-            exit();
-
-        }
-        else{
-            //Invalid Info
-            echo "Please Enter Valid username and password!";
-            header("location:Login.php");
-            exit();
-        }
-
-    }
-
-}
-
-
-
-?>
 
 
 <nav id="pageNav" style="z-index: 99;position:fixed;width:100%;padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">

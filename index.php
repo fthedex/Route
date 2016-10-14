@@ -1,7 +1,8 @@
 
 <?php
 session_start();
-
+require "user.php";
+$globalUser = new user;
 
 ?>
 <!DOCTYPE html>
@@ -22,81 +23,7 @@ session_start();
 
 <body>
 
-<?php
-function validInfoFromDb($userInfoName,$userInfoPassword){
 
-
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "routedb";
-
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
-    $result = $conn->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-
-            if($row['password']==$userInfoPassword){
-
-                $conn->close();
-                return true;
-            }
-            else{
-
-                $conn->close();
-                return false;
-
-            }
-        }
-    } else {
-       // 0 results
-
-
-    }
-    return false;
-    $conn->close();
-
-}
-$logged_in=false;
-if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
-    $logged_in=true;
-
-
-}
-else{
-// if cookie is set but session destroyed , u gotta check if cookie is right and redirect him!
-
-if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){ //means he is logging-in for the first time
-$username = $_COOKIE['routeUsername'];
-$password = $_COOKIE['routePassword'];
-if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
-setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day
-setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
-
-$_SESSION["routeUsername"] = $username;
-$_SESSION["routePassword"] = $password;
-
-    $logged_in=true;
-
-}
-else{
-//Invalid Info
-
-}
-
-}
-
-}
-?>
 
 <form>
 <div>
@@ -128,7 +55,7 @@ else{
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php
-                    if($logged_in){
+                    if($globalUser->logged_in){
                         echo "<li><p  style=\"color: yellow; font-family: 'Lobster', cursive;
     font-family: 'Anton', sans-serif;font-size:24px;margin:18px 12px 12px 12px;\" ><span class=\"glyphicon glyphicon-user\"></span> ".strtoupper($_SESSION['routeUsername'])."</p></li>";
 

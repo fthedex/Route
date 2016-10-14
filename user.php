@@ -9,11 +9,11 @@
 class user
 {
 
-    var $username;
-    var $passwordHash;
-    var $fullName;
-    var $userType;
-    var $logged_in;
+    public $username;
+    public $passwordHash;
+    public $fullName;
+    public $userType;
+    public $logged_in;
 
     function __construct()
     {
@@ -72,19 +72,19 @@ class user
             while($row = $result->fetch_assoc()) {
 
                 if($row['password']==$userInfoPassword){
-                    echo "TRUE";
+
                     $conn->close();
                     return true;
                 }
                 else{
-                    echo "FALSE";
+
                     $conn->close();
                     return false;
 
                 }
             }
         } else {
-            echo "0 results";
+          //  echo "0 results";
 
 
         }

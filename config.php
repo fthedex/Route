@@ -68,7 +68,7 @@ function getDataRow($userInfoName){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
+    $sql = "SELECT * FROM userinfo WHERE username='$userInfoName'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -97,11 +97,17 @@ if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //mean
    if(validInfoFromDb($username,$password)){       //if his information valid then we can do our operations
        // 1- set cookies for him with the $username and the $password
        // 2- log him into the system and connect him to the server by sessions.
+       $data = getDataRow($username);
+
        setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day     *Setting Cookies For him
        setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
+       setcookie('routeFullName', $data['name'], time() + (86400 * 30), "/");
+       setcookie('routeUserType', $data['accType'], time() + (86400 * 30), "/");
 
        $_SESSION["routeUsername"] = $username;           //linking him to the server , sessions must be used
        $_SESSION["routePassword"] = $password;           //because they are stored on the server and he has no access to them
+       $_SESSION["routeFullName"] = $data['name'];
+       $_SESSION["routeUserType"] = $data['accType'];
        header("location:ControlPanel.php");   //redirect him to the control panel.
        exit();  //exit of this configuration page
 
