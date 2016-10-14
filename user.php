@@ -18,15 +18,17 @@ class user
     function __construct()
     {
 
-        if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
+        if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){  //is he logged in ?
             $this->logged_in=true;
-            $this->username=$_SESSION['routeUsername'];
+            $this->username=$_SESSION['routeUsername'];      //initialize session server data to client data
             $this->passwordHash = $_SESSION['routePassword'];
             $this->fullName = $_SESSION['routeFullName'];
             $this->userType = $_SESSION['routeUserType'];
 
         }
-        else if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){
+        else if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){   //if he has cookies but his session was destroyed , do this
+            // 1- validate his cookies because it might be wrong!
+            // 2- if his info are valid then you can connect the person to the server with his cookie values to the session and initilize the class values
             $tempUser = $_COOKIE['routeUsername'];
             $tempPassword = $_COOKIE['routePassword'];
 
