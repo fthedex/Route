@@ -18,23 +18,23 @@ class user
     function __construct()
     {
 
-        if(isset($_SESSION['routeUsername'])){
+        if(isset($_SESSION['routeUsername'])&&isset($_SESSION['routePassword'])){
             $this->logged_in=true;
-            $this->username=$_SESSION['routeUsername']['username'];
-            $this->passwordHash = $_SESSION['routeUsername']['password'];
-            $this->fullName = $_SESSION['routeUsername']['name'];
-            $this->userType = $_SESSION['routeUsername']['type'];
+            $this->username=$_SESSION['routeUsername'];
+            $this->passwordHash = $_SESSION['routePassword'];
+            $this->fullName = $_SESSION['routeFullName'];
+            $this->userType = $_SESSION['routeUserType'];
 
         }
-        else if(isset($_COOKIE['routeUsername'])){
-            $tempUser = $_COOKIE['routeUsername']['username'];
-            $tempPassword = $_COOKIE['routeUsername']['password'];
+        else if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){
+            $tempUser = $_COOKIE['routeUsername'];
+            $tempPassword = $_COOKIE['routePassword'];
 
             if($this->validInfoFromDb($tempUser,$tempPassword)){
-               $this->username = $_SESSION['routeUsername']['username']=$_COOKIE['routeUsername']['username'];
-               $this->passwordHash = $_SESSION['routeUsername']['password']=$_COOKIE['routeUsername']['password'];
-               $this->fullName = $_SESSION['routeUsername']['name'] = $_COOKIE['routeUsername']['name'];
-               $this->userType = $_SESSION['routeUsername']['type']  = $_COOKIE['routeUsername']['type'];
+               $this->username = $_SESSION['routeUsername']=$_COOKIE['routeUsername'];
+               $this->passwordHash = $_SESSION['routePassword']=$_COOKIE['routePassword'];
+               $this->fullName = $_SESSION['routeFullName'] = $_COOKIE['routeFullName'];
+               $this->userType = $_SESSION['routeUserType']  = $_COOKIE['routeUserType'];
                $this->logged_in=true;
 
             }

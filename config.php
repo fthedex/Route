@@ -53,6 +53,41 @@ return false;
 
 }
 
+function getDataRow($userInfoName){
+
+    $row = null;
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "routedb";
+
+// Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+
+            return $row;
+        }
+    } else {
+        echo "0 results";
+
+
+    }
+    return $row;
+    $conn->close();
+}
+
+
+
 //TAKE IN MIND THE SCENARIO IS ONLY FIRED WHEN YOU DO SUBMIT AND LOGIN , HOW EVER THIS CONFIG FILE WILL NOT BE USED FOR EVERYPAGE
 
 //if he does not have a cookie , it means he is logging-in for the first time or he deleted his browsing history including his cookies
