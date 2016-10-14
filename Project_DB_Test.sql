@@ -6,7 +6,7 @@
 
 
 
---Account info (Lock-up table)
+--Account info (Look-up table)
 -- 1:Driver, 2:Parent, 3:Student
 CREATE TABLE accountInfo
 (
@@ -14,23 +14,7 @@ CREATE TABLE accountInfo
 	accountType VARCHAR(15) NULL
 )
 
---Gender table (Lock-up table)
---1:Male, 2:Female
-CREATE TABLE gender
-(
-	genderID INT PRIMARY KEY,
-	genderType VARCHAR(15) NULL
-)
-
---Grade table (Lock-up table)
---1:first grade, ...
-CREATE TABLE grade
-(
-	gradeID INT PRIMARY KEY,
-	gradeName VARCHAR(15) NULL
-)
-
---Line table (Lock-up table)
+--Line table (Look-up table)
 --1: Madina line, ...
 CREATE TABLE line
 (
@@ -58,7 +42,7 @@ CREATE TABLE driver
 	driverPassword VARCHAR(255) NOT NULL,
 	driverFirstName VARCHAR(25) NULL,
 	driverLastName VARCHAR(25) NULL,
-	driverGender INT FOREIGN KEY REFERENCES gender(genderID) ON UPDATE CASCADE ON DELETE SET NULL,
+	driverGender char(1),
 	driverDoB DATETIME NULL,
 	driverNumber VARCHAR(25) NOT NULL,
 	driverBusID INT FOREIGN KEY REFERENCES bus(busID) ON UPDATE CASCADE ON DELETE SET NULL,
@@ -90,8 +74,9 @@ CREATE TABLE busRound
 	finishTime DATETIME
 )
 
---busRoundTime table (lock-up table)
+--busRoundTime table (look-up table)
 --EAT: Estimated Arrival Time
+--This table is for printing only (You can delete it)
 CREATE TABLE busRoundTime
 (
 	roundID INT FOREIGN KEY REFERENCES busRound(roundID) ON UPDATE CASCADE,
@@ -121,7 +106,7 @@ CREATE TABLE parent
 	parentFirstName VARCHAR(15) NULL,
 	parentLastName VARCHAR(15) NULL,
 	parentDoB DATETIME NULL,
-	parentGender INT FOREIGN KEY REFERENCES gender(genderID) ON UPDATE CASCADE ON DELETE SET NULL,
+	parentGender char(1),
 	parentNumber VARCHAR(25) NOT NULL,
 	parentAddress VARCHAR(50) NULL
 )
@@ -135,8 +120,8 @@ CREATE TABLE student
 	studentParent INT FOREIGN KEY REFERENCES parent(parentID),
 	studentFirstName VARCHAR(15) NULL,
 	studentLastName VARCHAR(15) NULL,
-	studentGender INT FOREIGN KEY REFERENCES gender(genderID) ON UPDATE CASCADE ,
+	studentGender char(1),
 	studentDoB DATETIME NULL,
-	studentGrade INT FOREIGN KEY REFERENCES grade(gradeID) ON UPDATE CASCADE,
+	studentGrade varchar(2),
 	studentRound INT FOREIGN KEY REFERENCES busRound(roundID) ON UPDATE CASCADE
 )
