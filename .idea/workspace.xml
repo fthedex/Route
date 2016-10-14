@@ -85,6 +85,8 @@
       <file leaf-file-name="user.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="127">
+              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
                 <element signature="n#validInfoFromDb#0;n#user#0;n#!!top" expanded="false" />
                 <marker date="1476441297004" expanded="true" signature="1971:2041" ph="SELECT usern... userinfo" />
@@ -351,10 +353,12 @@
       <workItem from="1476265773961" duration="12772000" />
       <workItem from="1476336813639" duration="1257000" />
       <workItem from="1476342434228" duration="2436000" />
+      <workItem from="1476427846422" duration="10487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="120420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
@@ -895,6 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
             <element signature="n#validInfoFromDb#0;n#user#0;n#!!top" expanded="false" />
             <marker date="1476441297004" expanded="true" signature="1971:2041" ph="SELECT usern... userinfo" />
