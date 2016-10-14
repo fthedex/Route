@@ -150,7 +150,11 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 <div style="padding:0px;" class="loginBody container-fluid">
 <div id="panelItemsContainer" class="container-fluid padding20">
 
-
+    <?php
+    if($logged_in){
+        
+    }
+    ?>
     <div class="controlPanelItem">
         <div id="innnerMap" class="centerElement">
             <span class="glyphicon glyphicon-map-marker"></span>
