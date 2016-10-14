@@ -80,33 +80,43 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 <div style="padding:0px;" class="loginBody container-fluid">
 <div id="panelItemsContainer" class="container-fluid padding20">
 
-
-    <div class="controlPanelItem">
-        <div id="innnerMap" class="centerElement">
-            <span class="glyphicon glyphicon-map-marker"></span>
+    <?php
+    if($globalUser->loggedIn())
+        if($globalUser->getUserType()=="1"){
+        // driver
+            echo " <div class='controlPanelItem'>
+        <div id='innnerMap' class='centerElement'>
+            <span class='glyphicon glyphicon-map-marker'></span>
             <br>
-            <p class="pGlobalFont">Route(Map)</p>
+            <p class='pGlobalFont'>Route(Map)</p>
         </div>
 
 
-    </div>
-
-
-    <div id="showMapStudent" class="controlPanelItem">
-        <div id="innerShowBusStudent" class="centerElement">
-            <span class="glyphicon glyphicon-bed"></span>
+    </div>";
+        }
+        else if($globalUser->getUserType()=="2"){
+            echo "<div class='controlPanelItem'>
+        <div id='innerShowBusesFamily' class='centerElement'>
+            <span class='glyphicon glyphicon-bed'></span>
             <br>
-            <p class="pGlobalFont textAlignCenter">Your map</p>
+            <p class='pGlobalFont textAlignCenter'>Children maps</p>
         </div>
-    </div>
+    </div>";
 
-    <div class="controlPanelItem">
-        <div id="innerShowBusesFamily" class="centerElement">
-            <span class="glyphicon glyphicon-bed"></span>
+        }
+        else{
+            echo " <div id='showMapStudent' class='controlPanelItem'>
+        <div id='innerShowBusStudent' class='centerElement'>
+            <span class='glyphicon glyphicon-bed'></span>
             <br>
-            <p class="pGlobalFont textAlignCenter">Children maps</p>
+            <p class='pGlobalFont textAlignCenter'>Your map</p>
         </div>
-    </div>
+    </div>";
+        }
+
+    ?>
+
+
 
 
 

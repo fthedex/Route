@@ -33,10 +33,11 @@ class user
             $tempPassword = $_COOKIE['routePassword'];
 
             if($this->validInfoFromDb($tempUser,$tempPassword)){
-               $this->username = $_SESSION['routeUsername']=$_COOKIE['routeUsername'];
-               $this->passwordHash = $_SESSION['routePassword']=$_COOKIE['routePassword'];
-               $this->fullName = $_SESSION['routeFullName'] = $_COOKIE['routeFullName'];
-               $this->userType = $_SESSION['routeUserType']  = $_COOKIE['routeUserType'];
+                $data = $this->getDataRow($tempUser);
+               $this->username = $_SESSION['routeUsername']=$data['username'];
+               $this->passwordHash = $_SESSION['routePassword']=$data['password'];
+               $this->fullName = $_SESSION['routeFullName'] = $data['name'];
+               $this->userType = $_SESSION['routeUserType']  = $data['accType'];
                $this->logged_in=true;
 
             }
@@ -50,7 +51,38 @@ class user
         }
 
     }
+    function getDataRow($userInfoName){
 
+        $row = null;
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "routedb";
+
+// Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT * FROM userinfo WHERE username='$userInfoName'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+
+                return $row;
+            }
+        } else {
+            echo "0 results";
+
+
+        }
+        return $row;
+        $conn->close();
+    }
     function validInfoFromDb($userInfoName,$userInfoPassword){
 
 

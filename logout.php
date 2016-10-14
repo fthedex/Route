@@ -30,7 +30,7 @@ session_start();
 
 //user is now logged-out
 
-header("location:/Route/");
+header("location:/Route/Login.php");
 
 //redirect user to home page
 
