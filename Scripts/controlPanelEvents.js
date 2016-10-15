@@ -94,14 +94,3 @@ function initMapStudent() {
     });
 }
 
-
-$( document ).ready(function() {
-
-
-
-
-    $("#showMapStudent").click(function(){
-        initMapStudent();
-    });
-});
-
