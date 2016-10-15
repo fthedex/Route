@@ -124,3 +124,12 @@ CREATE TABLE student
 	studentGrade varchar(2),
 	studentRound INT FOREIGN KEY REFERENCES busRound(roundID) ON UPDATE CASCADE
 )
+
+--Student-Parent table
+--To keep trrack of the parent(s) and their children
+CREATE TABLE student_parent
+(
+	parentID INT FOREIGN KEY REFERENCES parent(parentID),
+	studentID INT FOREIGN KEY REFERENCES student(studentID),
+	PRIMARY KEY(parentID, studentID)
+)
