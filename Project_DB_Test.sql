@@ -117,7 +117,6 @@ CREATE TABLE student
 (
 	studentID INT PRIMARY KEY IDENTITY(20160001, 1),
 	studentPassword VARCHAR(255) NOT NULL,
-	studentParent INT FOREIGN KEY REFERENCES parent(parentID),
 	studentFirstName VARCHAR(15) NULL,
 	studentLastName VARCHAR(15) NULL,
 	studentGender char(1),
