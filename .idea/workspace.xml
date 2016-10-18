@@ -102,12 +102,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-              <folding />
+            <state relative-caret-position="121">
+              <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+              <folding>
+                <marker date="1476815724059" expanded="true" signature="4411:4421" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,11 +147,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="104" column="80" selection-start-line="104" selection-start-column="80" selection-end-line="104" selection-end-column="80" />
+            <state relative-caret-position="446">
+              <caret line="104" column="48" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="48" />
               <folding>
                 <marker date="1476815724095" expanded="true" signature="831:901" ph="SELECT usern... userinfo" />
                 <marker date="1476815724095" expanded="true" signature="1805:1858" ph="SELECT * FRO... userinfo" />
@@ -375,16 +377,16 @@
       <workItem from="1476342434228" duration="2436000" />
       <workItem from="1476427846422" duration="20939000" />
       <workItem from="1476466696773" duration="8207000" />
-      <workItem from="1476815780038" duration="69000" />
+      <workItem from="1476815780038" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139148000" />
+    <option name="totallyTimeSpent" value="139377000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1371" height="744" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30110702" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -453,7 +455,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1476815724059" expanded="true" signature="4411:4421" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -566,7 +570,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="918">
           <caret line="54" column="12" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
-          <folding />
+          <folding>
+            <marker date="1476815724059" expanded="true" signature="4411:4421" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -980,14 +986,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1070,11 +1068,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="104" column="80" selection-start-line="104" selection-start-column="80" selection-end-line="104" selection-end-column="80" />
+        <state relative-caret-position="446">
+          <caret line="104" column="48" selection-start-line="104" selection-start-column="41" selection-end-line="104" selection-end-column="48" />
           <folding>
             <marker date="1476815724095" expanded="true" signature="831:901" ph="SELECT usern... userinfo" />
             <marker date="1476815724095" expanded="true" signature="1805:1858" ph="SELECT * FRO... userinfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
+          <folding>
+            <marker date="1476815724059" expanded="true" signature="4411:4421" ph="..." />
           </folding>
         </state>
       </provider>
