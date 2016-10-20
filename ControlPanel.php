@@ -473,7 +473,12 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
     </div>";
         } //End of driver Permissions , NEEDS CODING!
+       else if($globalUser->getUserType()=="2"){ //parent
 
+       }
+       else{  //student
+
+       }
     }
 
 
