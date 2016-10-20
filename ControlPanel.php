@@ -28,7 +28,203 @@ exit();
 
     <?php
     if($globalUser->loggedIn()){
-        if($globalUser->getUserType()=="1"){
+        if($globalUser->getUserType()=="1"){ //driver
+            echo "<script>
+
+
+
+function initMapDriver() {
+
+    // Styles a map in night mode.
+
+    var map = new google.maps.Map(document.getElementById('driverPanelBoard'), {
+        center: {lat: 40.674, lng: -73.945},
+        zoom: 12,
+        styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+                featureType: 'administrative.locality',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{color: '#263c3f'}]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#6b9a76'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{color: '#38414e'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#212a37'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#9ca5b3'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [{color: '#746855'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#1f2835'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#f3d19c'}]
+            },
+            {
+                featureType: 'transit',
+                elementType: 'geometry',
+                stylers: [{color: '#2f3948'}]
+            },
+            {
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{color: '#17263c'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#515c6d'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'labels.text.stroke',
+                stylers: [{color: '#17263c'}]
+            }
+        ]
+    });
+}
+</script>
+";
+        }
+        else if($globalUser->getUserType()=="2"){ //parent
+            echo "<script>
+
+
+
+function initMapParents() {
+
+    // Styles a map in night mode.
+
+    var map = new google.maps.Map(document.getElementById('parentsPanelBoard'), {
+        center: {lat: 40.674, lng: -73.945},
+        zoom: 12,
+        styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+            {
+                featureType: 'administrative.locality',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'poi',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'geometry',
+                stylers: [{color: '#263c3f'}]
+            },
+            {
+                featureType: 'poi.park',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#6b9a76'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry',
+                stylers: [{color: '#38414e'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#212a37'}]
+            },
+            {
+                featureType: 'road',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#9ca5b3'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry',
+                stylers: [{color: '#746855'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'geometry.stroke',
+                stylers: [{color: '#1f2835'}]
+            },
+            {
+                featureType: 'road.highway',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#f3d19c'}]
+            },
+            {
+                featureType: 'transit',
+                elementType: 'geometry',
+                stylers: [{color: '#2f3948'}]
+            },
+            {
+                featureType: 'transit.station',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#d59563'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'geometry',
+                stylers: [{color: '#17263c'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'labels.text.fill',
+                stylers: [{color: '#515c6d'}]
+            },
+            {
+                featureType: 'water',
+                elementType: 'labels.text.stroke',
+                stylers: [{color: '#17263c'}]
+            }
+        ]
+    });
+}
+</script>
+";
+        }
+        else  //student
+        {
+
             echo "<script>
 
 
@@ -124,6 +320,7 @@ function initMapStudent() {
 }
 </script>
 ";
+
         }
     }
     ?>
@@ -141,8 +338,9 @@ function initMapStudent() {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a  style="color:rgb(8,134,202);margin-right:50px;margin-bottom: 12px;"
-                class="navbar-brand webSiteNameFont" href="/Route">Route</a>
+            <div style="margin-right:70px;margin-left:20px;width:40px;padding:0px;" class="boxShadowTransparent">
+                <img class="fullWidth" src="logoCropped.png" />
+            </div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
@@ -186,7 +384,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     if($globalUser->loggedIn())
         if($globalUser->getUserType()=="1"){
         // driver
-            echo " <div class='controlPanelItem'>
+            echo "<div style='margin-left:37%;' class='controlPanelItem'>
         <div id='innnerMap' class='centerElement'>
             <span class='glyphicon glyphicon-map-marker'></span>
             <br>
@@ -197,7 +395,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     </div>";
         }
         else if($globalUser->getUserType()=="2"){
-            echo "<div class='controlPanelItem'>
+            echo "<div style='margin-left:37%;' class='controlPanelItem'>
         <div id='innerShowBusesFamily' class='centerElement'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
@@ -207,7 +405,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
         }
         else{
-            echo " <div id='showMapStudent' class='controlPanelItem'>
+            echo " <div style='margin-left:37%;' id='showMapStudent' class='controlPanelItem'>
         <div id='innerShowBusStudent' class='centerElement'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
@@ -223,15 +421,78 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
 
 </div>
-    <div style="padding: 0px;" id="studentPanelBoard" class="container-fluid boxShadow"></div>
+
+
+
+    <?php
+    if($globalUser->loggedIn()){
+
+       if($globalUser->getUserType()=="1"){  //driver
+
+           echo "<div class='container-fluid backColorGrey padding10'>
+        <div class='container'>
+
+
+            <div style='margin: 0px;' class='col-sm-6'>
+<br>
+                <label class='pGlobalFont' for='studentsList'>Students: </label>
+
+                <select class='boxShadow' id='studentsList' name='studentsList'>
+                    <option value='australia'>Mohammed Khalil</option>
+                    <option value='canada'>Mohammed Ayyad</option>
+
+                </select>
+<br><br><br>
+                <div class='submitDiv'>Check</div>
+<br><br><br>
+                <div class='backRgbaOnBlacks padding20 boxShadow'>
+<p  class='pGlobalFont textAlignCenter'>Students Taken: 25</p>
+                    <p class='pGlobalFont textAlignCenter'>Students Left: 40</p>
+                    <p style='color:red' class='pGlobalFont textAlignCenter textShadow'>Time: 11:45 PM</p>
+
+
+
+
+
+
+                </div>
+<br><br>
+            </div>
+
+            <div style=\"margin: 0px;padding: 0px;\" id=\"driverPanelBoard\" class=\"col-sm-6 boxShadow\"> <!-- MAP Container-->
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>";
+        }
+
+    }
+
+
+
+    ?>
 
 
 </div>
 
 <?php
-if(true)
-    echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapStudent'
-        async defer></script>"
+if($globalUser->loggedIn()) {
+    if ($globalUser->getUserType() == "1")  //driver
+        echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapDriver'
+        async defer></script>";
+    else if ($globalUser->getUserType() == "2") { //parent
+        echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapParents'
+        async defer></script>";
+    } else {
+        echo "<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapStudent'
+        async defer></script>";
+    }
+}
 ?>
 
 

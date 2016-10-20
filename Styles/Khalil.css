@@ -108,6 +108,16 @@ html, body {
 
 }
 
+
+.backRgbaOnBlacks{
+    background-color:rgba(0,0,0,0.3) ;
+}
+
+.backColorWhite{
+
+    background-color:white;
+}
+
 .backColorBlack{
     background-color:black;
 
@@ -155,6 +165,14 @@ font-size: 20px;
 height: 113px;
 }
 
+
+.forPermissionsContainer{
+    background-color:rgb(10,36,64);
+    margin-left:20px;margin-right:20px;
+    margin-top:20px;
+    height: 450px;
+
+}
 
 #studentPanelBoard{
 
@@ -255,6 +273,26 @@ input[type=text], select,textarea {
 }
 
 
+.submitDiv{
+
+    text-align: center;
+    width: 119px;
+    margin: auto;
+    background-color: rgb(4,134,203);
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
+    box-shadow: 1px 2px 2px black;
+}
+
+
+.textShadow{
+    text-shadow: 2px 3px 3px black;
+}
 
 input[type=submit] {
     width: 100%;
@@ -283,6 +321,11 @@ input[type=password]{
 }
 input[type=submit]:hover {
     background-color: rgb(18,104,243);
+}
+
+.submitDiv:hover{
+    background-color: rgb(18,104,243);
+
 }
 
 

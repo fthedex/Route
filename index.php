@@ -37,8 +37,9 @@ $globalUser = new user;
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a  style="color:rgb(8,134,202);margin-right:50px;margin-bottom: 12px;"
-                    class="navbar-brand webSiteNameFont" href="/Route">Route</a>
+                <div style="margin-right:70px;margin-left:20px;width:40px;padding:0px;" class="boxShadowTransparent">
+                    <img class="fullWidth" src="logoCropped.png" />
+                </div>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
