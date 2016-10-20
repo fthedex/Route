@@ -222,6 +222,12 @@ position: relative;
     font-size: 50px;
 }
 
+.borderSmall{
+
+    border-style: solid;
+    border-width: 1px;
+}
+
 .controlPanelItem{
 width:142px;
     height: 130px;

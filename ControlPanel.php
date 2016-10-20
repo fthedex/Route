@@ -433,7 +433,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
         <div class='container'>
 
 
-            <div style='margin: 0px;' class='col-sm-6'>
+            <div style='margin: 7px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
 <br>
                 <label class='pGlobalFont' for='studentsList'>Students: </label>
 
@@ -442,13 +442,16 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
                     <option value='canada'>Mohammed Ayyad</option>
 
                 </select>
-<br><br><br>
+<br><br><br><br>
+
+
                 <div class='submitDiv'>Check</div>
-<br><br><br>
-                <div class='backRgbaOnBlacks padding20 boxShadow'>
+                <br>
+<br><br>
+                <div class='padding20 '>
 <p  class='pGlobalFont textAlignCenter'>Students Taken: 25</p>
                     <p class='pGlobalFont textAlignCenter'>Students Left: 40</p>
-                    <p style='color:red' class='pGlobalFont textAlignCenter textShadow'>Time: 11:45 PM</p>
+                    <p style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Time: 11:45 PM</p>
 
 
 
@@ -456,10 +459,10 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
 
                 </div>
-<br><br>
+
             </div>
 
-            <div style=\"margin: 0px;padding: 0px;\" id=\"driverPanelBoard\" class=\"col-sm-6 boxShadow\"> <!-- MAP Container-->
+            <div style=\"margin: 7px;padding: 0px;\" id=\"driverPanelBoard\" class=\"col-sm-5 boxShadow\"> <!-- MAP Container-->
 
 
 
@@ -469,7 +472,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
         </div>
 
     </div>";
-        }
+        } //End of driver Permissions , NEEDS CODING!
 
     }
 
