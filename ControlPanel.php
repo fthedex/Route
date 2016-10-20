@@ -384,7 +384,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     if($globalUser->loggedIn())
         if($globalUser->getUserType()=="1"){
         // driver
-            echo "<div style='margin-left:37%;' class='controlPanelItem'>
+            echo "<div style='margin-left:39%;' class='controlPanelItem'>
         <div id='innnerMap' class='centerElement'>
             <span class='glyphicon glyphicon-map-marker'></span>
             <br>
@@ -433,8 +433,8 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
         <div class='container'>
 
 
-            <div style='margin: 7px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
-<br>
+            <div style='margin: 7px;min-height: 456px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
+<br><br><br><br>
                 <label class='pGlobalFont' for='studentsList'>Students: </label>
 
                 <select class='boxShadow' id='studentsList' name='studentsList'>
@@ -442,12 +442,12 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
                     <option value='canada'>Mohammed Ayyad</option>
 
                 </select>
-<br><br><br><br>
+<
 
 
                 <div class='submitDiv'>Check</div>
-                <br>
-<br><br>
+              
+
                 <div class='padding20 '>
 <p  class='pGlobalFont textAlignCenter'>Students Taken: 25</p>
                     <p class='pGlobalFont textAlignCenter'>Students Left: 40</p>
