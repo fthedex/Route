@@ -395,7 +395,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     </div>";
         }
         else if($globalUser->getUserType()=="2"){
-            echo "<div style='margin-left:37%;' class='controlPanelItem'>
+            echo "<div style='margin-left:40%;' class='controlPanelItem'>
         <div id='innerShowBusesFamily' class='centerElement'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
@@ -405,7 +405,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
         }
         else{
-            echo " <div style='margin-left:37%;' id='showMapStudent' class='controlPanelItem'>
+            echo " <div style='margin-left:39%;' id='showMapStudent' class='controlPanelItem'>
         <div id='innerShowBusStudent' class='centerElement'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
@@ -435,6 +435,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
             <div style='margin: 7px;min-height: 456px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
 <br><br><br><br>
+<div class='padding10 borderSmall'>
                 <label class='pGlobalFont' for='studentsList'>Students: </label>
 
                 <select class='boxShadow' id='studentsList' name='studentsList'>
@@ -453,7 +454,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
                     <p class='pGlobalFont textAlignCenter'>Students Left: 40</p>
                     <p style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Time: 11:45 PM</p>
 
-
+</div>
 
 
 
@@ -474,7 +475,52 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     </div>";
         } //End of driver Permissions , NEEDS CODING!
        else if($globalUser->getUserType()=="2"){ //parent
+           echo "<div class='container-fluid backColorGrey padding10'>
+        <div class='container'>
 
+
+            <div style='margin: 7px;min-height: 456px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
+<br><br>
+<div class='padding10 borderSmall'>
+<div>
+                <label class='pGlobalFont' for='busesList'>Buses: </label>
+
+                <select class='boxShadow' id='busesList' name='busesList'>
+                    <option value='BUS201'>BUS201</option>
+                    <option value='BUS202'>BUS202</option>
+
+                </select>
+                <div class='submitDiv'>Refresh List</div><br>
+
+</div>
+
+                <div class='submitDiv'>Get Info</div>
+              
+
+                <div class='padding20 '>
+<p  class='pGlobalFont textAlignCenter'>BUS ID: BUS201</p>
+                    <p class='pGlobalFont textAlignCenter'>Phone No: +962789629404</p>
+                    <p style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Name: Mohammed Khalil</p>
+
+</div>
+
+
+
+
+                </div>
+
+            </div>
+
+            <div style=\"margin: 7px;padding: 0px;\" id=\"parentsPanelBoard\" class=\"col-sm-5 boxShadow\"> <!-- MAP Container-->
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>";
        }
        else{  //student
 
