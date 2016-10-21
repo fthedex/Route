@@ -9,6 +9,14 @@ exit();
 }
 
 
+function getDatePhp(){
+    date_default_timezone_set('Asia/Amman'); // CDT
+
+    $current_date = date('H:i:s');
+
+    return $current_date;
+}
+
 ?>
 
 
@@ -122,6 +130,25 @@ function initMapDriver() {
         ]
     });
 }
+
+
+
+ function getDate(){            //AJAX FOR DATE UPDATION EVERY ONE SECOND
+
+            $.ajax({
+                method: 'GET',
+                url: 'getDate.php',  //PHP FILE TO GET YOU DATE
+                data: {}
+            })
+                .done(function (data) {
+                    $('#date').html('Time:'+data);      
+
+
+                });
+
+        }
+        
+        setInterval(getDate, 1000);
 </script>
 ";
         }
@@ -452,7 +479,9 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
                 <div class='padding20 '>
 <p  class='pGlobalFont textAlignCenter'>Students Taken: 25</p>
                     <p class='pGlobalFont textAlignCenter'>Students Left: 40</p>
-                    <p style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Time: 11:45 PM</p>
+                    <p id='date' style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Time:".getDatePhp()."
+             
+</p>
 
 </div>
 
