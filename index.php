@@ -26,7 +26,6 @@ $globalUser = new user;
 
 
 
-<form>
 <div>
 
     <nav id="pageNav" style="z-index: 99;position:fixed;width:100%;padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">
@@ -93,7 +92,7 @@ $globalUser = new user;
         <div class="col-sm-6">
             <p class="pHeader">CONTACT US<br><hr></p>
             <p class="pGlobalFont">You can also contact us by submitting the following form.</p>
-            <form action="action_page.php">
+            <form action="insertContactInfo.php" id="confirmationForm" name="confirmationForm" method="post">
         <div class="col-sm-6">
             <label class="pGlobalFont" for="fname">First Name:</label>
             <input type="text" id="fname" name="firstname">
@@ -107,26 +106,27 @@ $globalUser = new user;
             </div>
 
                 <div class="col-sm-12">
-                <label class="pGlobalFont" for="country">Governorate: </label>
-                <select id="country" name="country">
-                    <option value="australia">Amman</option>
-                    <option value="canada">Aqaba</option>
-                    <option value="usa">Irbid</option>
+                <label class="pGlobalFont" for="governorate">Governorate: </label>
+                <select id="governorate" name="governorate">
+                    <option value="Amman">Amman</option>
+                    <option value="Aqaba">Aqaba</option>
+                    <option value="Irbid">Irbid</option>
                 </select>
                     <label class="pGlobalFont" for="company">Company:</label>
                     <input type="text" id="company" name="company">
 
-                    <label class="pGlobalFont" for="information">More Information:</label>
-                    <textarea id="information" rows="4" cols="50"></textarea>
+                    <label class="pGlobalFont" for="realInformation">More Information:</label>
+                    <textarea id="confirmationText" name="realInformation" form="confirmationForm" rows="4" cols="50"></textarea>
 
                 <input type="submit" value="Submit">
                     </div>
 
 
             </form>
-<!--
 
--->
+            <!--
+
+            -->
 
         </div>
         </div>
@@ -134,7 +134,6 @@ $globalUser = new user;
     </div>
 
 
-    </form>
 <div class="parallexWithImage">
 
 </div>
