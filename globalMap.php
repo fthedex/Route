@@ -38,6 +38,7 @@
 
             $.ajax({
                 method: 'GET',
+                url: 'getAllActiveBuses.php',  //Web service that gets every bus in database (busId,busLng,busLat)
                 data: {}
             })
                 .done(function (data) {
