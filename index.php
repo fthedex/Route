@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 require "user.php";
 $globalUser = new user;
 

@@ -1,6 +1,5 @@
 <?php
-session_start();  //starting session module on the server , sessions won't work without this
-
+require 'connection.php';
 /**
  * Created by PhpStorm.
  * User: Khalil
@@ -12,20 +11,12 @@ session_start();  //starting session module on the server , sessions won't work 
 function validInfoFromDb($userInfoName,$userInfoPassword){
 
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "routedb";
 
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+    $db = Database::getConnection();
+
 
     $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
-    $result = $conn->query($sql);
+    $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
@@ -33,12 +24,12 @@ function validInfoFromDb($userInfoName,$userInfoPassword){
 
            if($row['password']==$userInfoPassword){
                echo "TRUE";
-               $conn->close();
+
                return true;
                }
             else{
                 echo "FALSE";
-                $conn->close();
+
                 return false;
 
             }
@@ -49,41 +40,34 @@ function validInfoFromDb($userInfoName,$userInfoPassword){
 
     }
 return false;
-    $conn->close();
+
 
 }
 
 function getDataRow($userInfoName){
 
     $row = null;
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "routedb";
 
-// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+
+    $db = Database::getConnection();
+
+
 
     $sql = "SELECT * FROM userinfo WHERE username='$userInfoName'";
-    $result = $conn->query($sql);
+    $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
+        $row = $result->fetch_assoc();
 
-            return $row;
-        }
+
     } else {
         echo "0 results";
 
 
     }
+
     return $row;
-    $conn->close();
+
 }
 
 

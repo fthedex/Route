@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 require "user.php";
 $globalUser = new user;
 if($globalUser->loggedIn()==false){
@@ -36,6 +35,7 @@ function getDatePhp(){
 
     <?php
     if($globalUser->loggedIn()){
+
         if($globalUser->getUserType()=="1"){ //driver , we echo his map function , should accept markers (dynamic) soon to be developped
             echo "<script>
 
