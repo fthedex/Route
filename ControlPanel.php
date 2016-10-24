@@ -36,7 +36,7 @@ function getDatePhp(){
 
     <?php
     if($globalUser->loggedIn()){
-        if($globalUser->getUserType()=="1"){ //driver
+        if($globalUser->getUserType()=="1"){ //driver , we echo his map function , should accept markers (dynamic) soon to be developped
             echo "<script>
 
 
@@ -248,7 +248,7 @@ function initMapParents() {
 }
 </script>
 ";
-        }
+        } //same for the parent
         else  //student
         {
 

@@ -14,3 +14,5 @@ $current_date = date('H:i:s');
 
 echo $current_date;
 
+
+//returns date

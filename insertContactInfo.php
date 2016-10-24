@@ -8,7 +8,7 @@
 
 $firstName = $_POST['firstname'];
 $lastName = $_POST['lastname'];
-$country = $_POST['governorate'];
+$country = $_POST['governorate'];               //$_POST INFORMATION FROM THE USER , CONTACT FORM!
 $company = $_POST['company'];
 $information = $_POST['realInformation'];
 
@@ -23,7 +23,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+///Insert the data into a database table!
 $sql = "INSERT INTO userscontactform (firstName, lastName, governorate,company,userInformation)
 VALUES ('$firstName', '$lastName','$country' ,'$company','$information')";
 
@@ -40,7 +40,7 @@ $conn->close();
 <html>
 <script>
 
-
+//redirect the user after telling him that his info was either submited or not!
 
     setTimeout(function(){
         window.location = "index.php";

@@ -23,7 +23,7 @@ if($globalUser->loggedIn()){
     <link rel="stylesheet" type="text/css" href="Styles/Khalil.css">
 
   <script>
-      window.onload = function() {
+      window.onload = function() {  //get focus on user name whenever the user opens this page
          $("#username").focus();
       };
   </script>
@@ -97,7 +97,7 @@ echo "<input required type='text' id='username' name='username' minlength='5' ma
         <br>
         <?php
 
-        if(count($_GET)>0){
+        if(count($_GET)>0){ //for resting the user with giving back his acc name for example,,
         if($_GET['err']==2){ //if his information are invalid give him an error message
             echo "<p style='color:red;' class='pGlobalFont'>Invalid Information</p>";
         }}

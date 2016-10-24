@@ -32,6 +32,8 @@ class user
             $tempUser = $_COOKIE['routeUsername'];
             $tempPassword = $_COOKIE['routePassword'];
 
+
+            //if his data valid then we can simply put that into a user sessions if not he isnt logged in!
             if($this->validInfoFromDb($tempUser,$tempPassword)){
                 $data = $this->getDataRow($tempUser);
                $this->username = $_SESSION['routeUsername']=$data['username'];
@@ -51,6 +53,7 @@ class user
         }
 
     }
+    //gets a data row for a specific user!
     function getDataRow($userInfoName){
 
         $row = null;
