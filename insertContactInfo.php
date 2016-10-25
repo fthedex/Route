@@ -23,7 +23,7 @@ VALUES ('$firstName', '$lastName','$country' ,'$company','$information')";
 if ($db->query($sql) === TRUE) {
     echo "Message Sent , thank you for contacting us , you will be now redirected to the home page";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $db->error;
 }
 
 
