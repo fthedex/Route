@@ -8,20 +8,20 @@
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     require 'connection.php';
-    createBus();
+    removeBus();
 }
 
 
-function createBus()
+function removeBus()
 {
-    global $connect;
+    $db = Database::getConnection();
 
     $busID = $_POST["busId"];
 
 
     $query ="DELETE FROM updatebuslocation WHERE busId=$busID";
 
-    mysqli_query($connect, $query) or die (mysqli_error($connect));
+    mysqli_query($db, $query) or die (mysqli_error($db));
 
 
 }

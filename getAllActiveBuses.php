@@ -1,24 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "routedb";
+require "connection.php";
+
 $resultArr = array(array());
-// Create connection
-$conn = mysqli_connect($servername, $username, $password,$db);
-
-// Check connection
-if ($conn->connect_error) {
-    echo "ERR";
-}
 
 
-
+$db = Database::getConnection();
 
 
 $sql ="SELECT * FROM updateBusLocation";
 
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -33,7 +24,7 @@ if ($result->num_rows > 0) {
     }
 
 }
-$conn->close();
+
 echo json_encode($resultArr);
 
-?>
+

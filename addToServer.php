@@ -10,13 +10,13 @@
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     require 'connection.php';
-    createBus();
+    addBus();
 }
 
 
-function createBus()
+function addBus()
 {
-    global $connect;
+    $db = Database::getConnection();
 
     $busID = $_POST["busId"];
     $lng = $_POST["busLng"];
@@ -26,7 +26,7 @@ function createBus()
 
 
 
-    mysqli_query($connect, $query) or die (mysqli_error($connect));
+    mysqli_query($db, $query) or die (mysqli_error($db));
 
 
 }
