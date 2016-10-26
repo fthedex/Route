@@ -19,7 +19,7 @@ function updateBus()
     $lng = $_POST["busLng"];
     $lat = $_POST["busLat"];
 
-    $query = "UPDATE updatebuslocation SET busLng=$lng,busLat=$lat WHERE busId=$busID";
+    $query = "UPDATE updateBusLocation SET busLng=$lng,busLat=$lat WHERE busId=$busID";
 
 
     mysqli_query($db, $query) or die (mysqli_error($db));

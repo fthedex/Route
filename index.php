@@ -27,7 +27,7 @@ $globalUser = new user;
 
 <div>
 
-    <nav id="pageNav" style="z-index: 99;position:fixed;width:100%;padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">
+    <nav id="pageNav" style="padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button style="background-color:  rgb(10, 36, 64);" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -74,7 +74,7 @@ $globalUser = new user;
 
     </nav>
 
-    <br><br><br> <br>
+
 
   <!--  <img class="fullWidth" src="Images/blueNotBlured2.png" /> -->
 

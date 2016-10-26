@@ -22,7 +22,12 @@ function addBus()
     $lng = $_POST["busLng"];
     $lat = $_POST["busLat"];
 
-    $query = "Insert into updatebuslocation(busId,busLng,busLat) values ('$busID','$lng','$lat');";
+    echo $busID;
+    echo $lng;
+    echo $lat;
+
+
+    $query = "Insert into updateBusLocation(busId,busLng,busLat) values ('$busID','$lng','$lat');";
 
 
 
