@@ -87,8 +87,8 @@ create table driver
 create table updateBusLocation
 (
 	busID int not null,
-    busLong decimal(10,6) null,
-    busLati decimal(10,6) null,
+    busLong float(10,6) not null,
+    busLati float(10,6) not null,
     primary key(busID),
     foreign key(busID) references bus(busID) ON UPDATE CASCADE
 );
