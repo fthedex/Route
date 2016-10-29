@@ -12,7 +12,7 @@ class Database {
     }
 
     function __destruct() {
-        $this->connection->close();
+
     }
 
     public static function getConnection() {

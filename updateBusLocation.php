@@ -6,18 +6,13 @@
  * Time: 7:07 PM
  */
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
     require 'connection.php';
-    updateBus();
-}
 
-function updateBus()
-{
     $db = Database::getConnection();
 
-    $busID = $_POST["busId"];
-    $lng = $_POST["busLng"];
-    $lat = $_POST["busLat"];
+    $busID = $_GET["busId"];
+    $lng = $_GET["busLng"];
+    $lat = $_GET["busLat"];
 
     $query = "UPDATE updateBusLocation SET busLng=$lng,busLat=$lat WHERE busId=$busID";
 
@@ -25,4 +20,3 @@ function updateBus()
     mysqli_query($db, $query) or die (mysqli_error($db));
 
 
-}

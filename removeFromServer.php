@@ -6,17 +6,12 @@
  * Time: 7:07 PM
  */
 
-if($_SERVER["REQUEST_METHOD"]=="POST"){
+
     require 'connection.php';
-    removeBus();
-}
 
-
-function removeBus()
-{
     $db = Database::getConnection();
 
-    $busID = $_POST["busId"];
+    $busID = $_GET["busId"];
 
 
     $query ="DELETE FROM updateBusLocation WHERE busId=$busID";
@@ -24,5 +19,5 @@ function removeBus()
     mysqli_query($db, $query) or die (mysqli_error($db));
 
 
-}
+
 

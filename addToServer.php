@@ -6,21 +6,13 @@
  * Time: 7:06 PM
  */
 
-
-
-if($_SERVER["REQUEST_METHOD"]=="POST"){
     require 'connection.php';
-    addBus();
-}
 
-
-function addBus()
-{
     $db = Database::getConnection();
 
-    $busID = $_POST["busId"];
-    $lng = $_POST["busLng"];
-    $lat = $_POST["busLat"];
+    $busID = $_GET["busId"];
+    $lng = $_GET["busLng"];
+    $lat = $_GET["busLat"];
 
     echo $busID;
     echo $lng;
@@ -34,6 +26,6 @@ function addBus()
     mysqli_query($db, $query) or die (mysqli_error($db));
 
 
-}
+
 
 
