@@ -1,0 +1,130 @@
+
+Route:
+
+
+
+
+Linode:
+Username : mullerayyad
+Password : Muller@1995
+
+
+
+
+Webserver:
+
+
+root / root@route
+
+
+Khalil / fthedex
+
+
+
+
+Ip: 45.33.73.36 
+port : 22
+
+
+
+
+NOTES:
+use this insrtead of that
+
+
+mysql> set @out =  errorCodes(2);
+not select
+
+
+ALTER TABLE tbl AUTO_INCREMENT = 5;
+
+
+http://dev.mysql.com/doc/refman/5.7/en/string-functions.html#function_trim
+
+FIX ALL RETRIEVE PROCEDURES ACCORDING TO THE USER ACCOUNT TYPE:
+
+Parent:
+ALL c
+or c #1
+or c #2
+...
+
+
+
+
+Numberings:
+
+Admin:		100/001
+*Buses:		200/001
+*Driver:	300/001
+Assistant:	400/001
+
+*Lines:		1000/001
+*Round:		2000/001
+*Hotspot:	3000/001
+
+*Student:	2016/0/0001
+*Parent:	2016/1/0001
+
+Accounts Types:
+
+(for now its 1: driver, 2: student, and 3: parent)
+
+admin: 1
+driver: 2
+assistant: 3
+
+student: 4
+parent: 5
+
+
+Retrieve student/parent/bus info
+
+
+when logging -> check user/pass/type -> from type choose info:
+
+student:
+retrieve his/her info
+
+parent:
+retrieve bus/children info
+
+assistant:
+retrieve bus info 
+
+admin:
+retrieve global map info (null)
+
+
+
+
+*************************************************************
+NOT finished tables:
+
+
+Admin
+
+assistant
+
+(look-up table?)
+create table busRoundTime
+(
+	roundID int not null,
+    hotspotID int not null,
+    EAT time null,
+    primary key(roundID, hotspotID),
+    foreign key(roundID) references busRound(roundID) ON UPDATE CASCADE,
+    foreign key(hotspotID) references hotspot(hotspotID) ON UPDATE CASCADE
+);
+
+(log file instead?)
+create table busRoundHistory
+(
+	roundID int not null,
+    hotspotID int not null,
+    roundDate date null,
+    EAT time null,
+    AAT time null,
+    primary key(roundID, hotspotID)
+);
+
