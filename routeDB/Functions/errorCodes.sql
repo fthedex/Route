@@ -11,6 +11,7 @@ BEGIN
     ELSEIF p_error = 1 THEN SET v_error = 'Code (1) Success';
     ELSEIF p_error = 2 THEN SET v_error = 'Code (2) Record not found, Cannot update';
     ELSEIF p_error = 3 THEN SET v_error = 'Code (3) Record not found, Cannot delete';
+    ELSEIF p_error = 4 THEN SET v_error = 'Code (4) Record does not exist';
     ELSEIF p_error = 10 THEN SET v_error = 'Code (10) record already exists';
     END IF;
     
