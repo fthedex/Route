@@ -19,7 +19,7 @@ begin
 			if exists(select 1 from bus where busID = p_busID)
             then
 				insert into student(studentID, accountType, studentFN, studentLN, studentGender, studentDoB, studentGrade, studentBus)
-				values(null, 2, p_FN, p_LN, p_gender, STR_TO_DATE(p_DoB, '%d-%m-%y'), p_grade, p_busID);
+				values(null, 3, p_FN, p_LN, p_gender, STR_TO_DATE(p_DoB, '%d-%m-%y'), p_grade, p_busID);
 				set p_output = 1;
 				commit;
             else
