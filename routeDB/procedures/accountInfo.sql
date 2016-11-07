@@ -15,10 +15,46 @@ begin
     start transaction;
 		if not exists(select 1 from accountInfo where accountInfoID = p_accountID)
         then
-			insert into accountInfo(accountInfoID, accountPassword, accountType)
-            values(p_accountID, aes_encrypt(p_accountPassword, 'route2016'), p_accountType);
-            set p_output = 1;
-            commit;
+			if p_accountType = 1
+            then
+				if exists(select 1 from driver where driverID = p_accountID)
+                then
+					insert into accountInfo(accountInfoID, accountPassword, accountType)
+					values(p_accountID, aes_encrypt(p_accountPassword, 'route2016'), p_accountType);
+					set p_output = 1;
+					commit;
+				else
+					set p_output = 4;
+                    rollback;
+                end if;
+            elseif p_accountType = 2
+            then
+				if exists(select 1 from parent where parentID = p_accountID)
+                then
+					insert into accountInfo(accountInfoID, accountPassword, accountType)
+					values(p_accountID, aes_encrypt(p_accountPassword, 'route2016'), p_accountType);
+					set p_output = 1;
+					commit;
+                else
+					set p_output = 4;
+                    rollback;
+                end if;
+            elseif p_accountType = 3
+            then
+				if exists(select 1 from student where studentID = p_accountID)
+                then
+					insert into accountInfo(accountInfoID, accountPassword, accountType)
+					values(p_accountID, aes_encrypt(p_accountPassword, 'route2016'), p_accountType);
+					set p_output = 1;
+					commit;
+                else
+					set p_output = 4;
+                    rollback;
+                end if;
+            else
+				set p_output = 5;
+                rollback;
+            end if;
         else
 			set p_output = 10;
 			rollback;
