@@ -22,6 +22,8 @@ class user
     {
 
         require 'connection.php';
+        require 'gettersDb.php';
+        require 'validation.php';
         session_start();
 
 
@@ -31,10 +33,6 @@ class user
             $this->passwordHash = $_SESSION['routePassword'];
             $this->fullName = $_SESSION['routeFullName'];
             $this->userType = $_SESSION['routeUserType'];
-
-
-
-
 
         }
         else if(isset($_COOKIE['routeUsername'])&&isset($_COOKIE['routePassword'])){   //if he has cookies but his session was destroyed , do this
@@ -46,14 +44,14 @@ class user
 
 
             //if his data valid then we can simply put that into a user sessions if not he isnt logged in!
-            if($this->validInfoFromDb($tempUser,$tempPassword)){
+            if(validInfoFromDb($tempUser,$tempPassword)){
 
-                $data = $this->getDataRow($tempUser);
+                $data = getDataRow($tempUser);
 
-               $this->username = $_SESSION['routeUsername']=$data['username'];
-               $this->passwordHash = $_SESSION['routePassword']=$data['password'];
-               $this->fullName = $_SESSION['routeFullName'] = $data['name'];
-               $this->userType = $_SESSION['routeUserType']  = $data['accType'];
+               $this->username = $_SESSION['routeUsername']=$data['accountInfoID'];
+               $this->passwordHash = $_SESSION['routePassword']=$data['accountPassword'];
+               $this->fullName = $_SESSION['routeFullName'] = "NA";
+               $this->userType = $_SESSION['routeUserType']  = $data['accountType'];
                $this->logged_in=true;
 
             }
@@ -68,60 +66,7 @@ class user
 
     }
     //gets a data row for a specific user!
-    function getDataRow($userInfoName){
 
-        $row = null;
-        $db = Database::getConnection();
-        $sql = "SELECT * FROM userinfo WHERE username='$userInfoName'";
-        $result = $db->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            $row = $result->fetch_assoc();
-
-        } else {
-            echo "0 results";
-
-
-        }
-
-        return $row;
-    }
-    function validInfoFromDb($userInfoName,$userInfoPassword){
-
-
-
-
-        $db = Database::getConnection();
-
-
-
-        $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
-        $result = $db->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-
-                if($row['password']==$userInfoPassword){
-
-                    return true;
-                }
-                else{
-
-                    return false;
-
-                }
-            }
-        } else {
-          //  echo "0 results";
-
-
-        }
-        return false;
-
-
-    }
 
     function getUsername(){
         return $this->username;

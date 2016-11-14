@@ -15,7 +15,6 @@
     <link rel="icon" href="newpic.png">
 
     <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 
     <style>
         html, body {
@@ -65,19 +64,21 @@
 
 
 
+
+
     </script>
 </head>
 <body>
 
-<p style="display:none;" id="ajaxJSON">[["BUS0","-1","-1"]]</p>  <!-- The Element that our buses will be stored at! BUS0 is a default value -->
+<p style='display:none;' id='ajaxJSON'>[["BUS0","-1","-1"]]</p>  <!-- The Element that our buses will be stored at! BUS0 is a default value -->
 
 <div id="map"></div> <!-- Map Div -->
 
 <script>
+
+
     var MainMap;  //the main map of buses
     var markers = {}; //hash of buses that will be put on the map
-
-
 
     var BusesLocations = getOnlineBuses(); //Assigning current buses in database to BusesLocations
 
@@ -188,7 +189,7 @@
         //add every bus in database , AJAX is called before no need to call it again here
         addMarkersFirstLoad();
 
-        setTimeout(function(){  }, 1300); //we wait # seconds because we just got the data
+        setTimeout(function(){  }, 200); //we wait # seconds because we just got the data
         setInterval(function(){ //database AJAX communication every # seconds
 
 
@@ -197,7 +198,7 @@
             addMarkersTimerLoad(); //update markers of the map with the new BusesLocations Array.
 
 
-        }, 1300);
+        }, 200);
 
 
 

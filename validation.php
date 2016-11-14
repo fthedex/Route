@@ -13,14 +13,14 @@ function validInfoFromDb($userInfoName,$userInfoPassword){
     $db = Database::getConnection();
 
 
-    $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
+    $sql = "SELECT * FROM accountInfo WHERE accountInfoID='$userInfoName'";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
 
-            if($row['password']==$userInfoPassword){
+            if($row['accountPassword']==$userInfoPassword){
 
                 return true;
             }

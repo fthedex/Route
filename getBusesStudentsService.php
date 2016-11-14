@@ -3,13 +3,20 @@ require "connection.php";
 
 $resultArr = array(array());
 
+$userId = $_GET['userId'];
 
 $db = Database::getConnection();
 
 
-$sql ="SELECT * FROM updateBusLocation";
+$sql ="SELECT * FROM updateBusLocation,student WHERE tmwBusId = busID AND studentID = $userId";
 
-$result = $db->query($sql);
+//$result = $db->query($sql);
+
+if (!$result = mysqli_query($db, $sql)) {
+    printf("Errormessage: %s\n", mysqli_error($db));
+}
+
+
 
 if ($result->num_rows > 0) {
     // output data of each row

@@ -1,5 +1,7 @@
 <?php
 require 'connection.php';
+require 'validation.php';
+require 'gettersDb.php';
 /**
  * Created by PhpStorm.
  * User: Khalil
@@ -8,67 +10,7 @@ require 'connection.php';
  */
 // this function recieves 2 parms , the userInfoName which is the user to be validated with its password(userInfoPassword
 //if they are valid and this acccount has the same password as the one sent to this function it will return true, other wise will return false
-function validInfoFromDb($userInfoName,$userInfoPassword){
 
-
-
-    $db = Database::getConnection();
-
-
-    $sql = "SELECT username, password FROM userinfo WHERE username='$userInfoName'";
-    $result = $db->query($sql);
-
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while($row = $result->fetch_assoc()) {
-
-           if($row['password']==$userInfoPassword){
-               echo "TRUE";
-
-               return true;
-               }
-            else{
-                echo "FALSE";
-
-                return false;
-
-            }
-        }
-    } else {
-        echo "0 results";
-
-
-    }
-return false;
-
-
-}
-
-function getDataRow($userInfoName){
-
-    $row = null;
-
-
-    $db = Database::getConnection();
-
-
-
-    $sql = "SELECT * FROM userinfo WHERE username='$userInfoName'";
-    $result = $db->query($sql);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-
-
-    } else {
-        echo "0 results";
-
-
-    }
-
-    return $row;
-
-}
 
 
 
@@ -85,13 +27,15 @@ if(!isset($_COOKIE['routeUsername'])&&!isset($_COOKIE['routePassword'])){ //mean
 
        setcookie('routeUsername', $username, time() + (86400 * 30), "/"); // 86400 = 1 day     *Setting Cookies For him
        setcookie('routePassword', $password, time() + (86400 * 30), "/"); // 86400 = 1 day , this is bad but for testing
-       setcookie('routeFullName', $data['name'], time() + (86400 * 30), "/");
-       setcookie('routeUserType', $data['accType'], time() + (86400 * 30), "/");
+       setcookie('routeFullName', "NA", time() + (86400 * 30), "/"); //needs another query , to be done later
+ //      setcookie('routeFullName', $data['name'], time() + (86400 * 30), "/");
+
+       setcookie('routeUserType', $data['accountType'], time() + (86400 * 30), "/");
 
        $_SESSION["routeUsername"] = $username;           //linking him to the server , sessions must be used
        $_SESSION["routePassword"] = $password;           //because they are stored on the server and he has no access to them
-       $_SESSION["routeFullName"] = $data['name'];
-       $_SESSION["routeUserType"] = $data['accType'];
+       $_SESSION["routeFullName"] = "NA";
+       $_SESSION["routeUserType"] = $data['accountType'];
        header("location:ControlPanel.php");   //redirect him to the control panel.
        exit();  //exit of this configuration page
 

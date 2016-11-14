@@ -8,7 +8,7 @@ class Database {
     private $connection;
 
     private function __construct() {
-        $this->connection = new mysqli("localhost","root","","routedb");
+        $this->connection = new mysqli("localhost","root","","test");
     }
 
     function __destruct() {
