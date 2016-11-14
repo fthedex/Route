@@ -92,6 +92,8 @@ echo "<script>
 
 
     function removeSelectedElementFromDB(){
+        
+ajaxFromAwaitingToTaken();
 
     }
 
@@ -154,6 +156,29 @@ echo "<script>
 
             });
 
+    }
+    
+    function ajaxFromAwaitingToTaken(){
+           var e = document.getElementById('studentsList');
+
+         var studentId = e.options[e.selectedIndex].value;
+
+        if(studentId=='NA')
+            return;
+              $.ajax({
+            method: 'GET',
+            url: 'moveFromAwaitingToTaken.php?userId='+studentId+'&busId=".$globalUser->getUsername()."',  //PHP FILE TO GET YOU DATE
+            data: {}
+        })
+            .done(function (data) {
+                alert('student is now assigned to your bus :)');
+
+
+            });
+            
+            
+
+        
     }
 
 

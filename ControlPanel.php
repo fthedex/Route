@@ -25,7 +25,6 @@ if($globalUser->loggedIn()==false){
 
     <?php
     if($globalUser->loggedIn()){
-
         if($globalUser->getUserType()=="1"){ //driver , we echo his map function , should accept markers (dynamic) soon to be developped
 
             include("driverHeadScripts.php");

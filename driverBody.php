@@ -204,7 +204,7 @@ studentsMarkers[title]=marker;
                 <select class='boxShadow' id='studentsList' name='studentsList'>".getAwaitingAsOptions($globalUser->getUsername())."
 
 </select>
-                <div id='checkButton' onclick='removeFromMap();removeFromList();removeSelectedElementFromDB();' class='submitDiv'>Check</div>
+                <div id='checkButton' onclick='removeSelectedElementFromDB();removeFromMap();removeFromList();' class='submitDiv'>Check</div>
               
 
                 <div class='padding20 '>
