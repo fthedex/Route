@@ -21,6 +21,15 @@ echo "<script>
 
     }
     
+    function setMapCenter(methodLocation){
+       MainMap.setCenter(methodLocation)
+    
+    }
+    
+    
+
+    
+    
         function setMapOnAll(map) {   //method so we can set the markers hash to a map ( could be used to delete markers if we use null map)
         for (var i = 0; i < markers.length; i++) {
             markers[i].setMap(map);
@@ -59,7 +68,8 @@ echo "<script>
             var title = BusesLocations[i][0]; //title will be bus ID
 
             addMarker(Loc,title); //adding to buses global array (hash)
-
+            
+            setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
         }
     }
     
@@ -76,15 +86,22 @@ echo "<script>
                 var Loc = {lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])} //bus position
                 var title = BusesLocations[i][0]; //bus title (busID)
                 addMarker(Loc,title); //adding it to buses array
+              
+                setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+
 
             }
             else //if its already in the map , update the location only
             {
                 markers[key].setPosition({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
                 //set position updates the location of a marker(bus) on the map.
+                setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+
             }
 
         }
+        
+        
 
 
 
@@ -106,7 +123,7 @@ echo "<script>
 
         MainMap = new google.maps.Map(document.getElementById('studentPanelBoard'), {  //our main map attributes
             center: {lat: 31.9566, lng: 35.9457}, //map center
-            zoom: 8, //zoom value
+            zoom: 11, //zoom value
             styles: [{\"featureType\":\"water\",\"stylers\":[{\"color\":\"#19a0d8\"}]},{\"featureType\":\"administrative\",\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"color\":\"#ffffff\"},{\"weight\":6}]},{\"featureType\":\"administrative\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"color\":\"#e85113\"}]},{\"featureType\":\"road.highway\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"color\":\"#efe9e4\"},{\"lightness\":-40}]},{\"featureType\":\"road.arterial\",\"elementType\":\"geometry.stroke\",\"stylers\":[{\"color\":\"#efe9e4\"},{\"lightness\":-20}]},{\"featureType\":\"road\",\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"lightness\":100}]},{\"featureType\":\"road\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"lightness\":-100}]},{\"featureType\":\"road.highway\",\"elementType\":\"labels.icon\"},{\"featureType\":\"landscape\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"landscape\",\"stylers\":[{\"lightness\":20},{\"color\":\"#efe9e4\"}]},{\"featureType\":\"landscape.man_made\",\"stylers\":[{\"visibility\":\"off\"}]},{\"featureType\":\"water\",\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"lightness\":100}]},{\"featureType\":\"water\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"lightness\":-100}]},{\"featureType\":\"poi\",\"elementType\":\"labels.text.fill\",\"stylers\":[{\"hue\":\"#11ff00\"}]},{\"featureType\":\"poi\",\"elementType\":\"labels.text.stroke\",\"stylers\":[{\"lightness\":100}]},{\"featureType\":\"poi\",\"elementType\":\"labels.icon\",\"stylers\":[{\"hue\":\"#4cff00\"},{\"saturation\":58}]},{\"featureType\":\"poi\",\"elementType\":\"geometry\",\"stylers\":[{\"visibility\":\"on\"},{\"color\":\"#f0e4d3\"}]},{\"featureType\":\"road.highway\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"color\":\"#efe9e4\"},{\"lightness\":-25}]},{\"featureType\":\"road.arterial\",\"elementType\":\"geometry.fill\",\"stylers\":[{\"color\":\"#efe9e4\"},{\"lightness\":-10}]},{\"featureType\":\"poi\",\"elementType\":\"labels\",\"stylers\":[{\"visibility\":\"simplified\"}]}]
             //styles of the map
         });
