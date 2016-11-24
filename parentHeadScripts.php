@@ -1,6 +1,7 @@
 
 <?php
 
+
 echo "<script>
 
         function getOnlineBusesAJAX(){            //Communicating with database using AJAX.
