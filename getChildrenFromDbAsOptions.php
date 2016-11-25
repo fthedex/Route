@@ -6,14 +6,15 @@
  * Time: 10:31 AM
  */
 
+require "connection.php";
+
 function getChildrenIdName($user)
 {
-
-
     $db = Database::getConnection();
 
 
-    $sql = "SELECT takenstudentslist.busID , takenstudentslist.studentID FROM takenstudentslist,studentparent WHERE studentparent.studentID = takenstudentslist.studentID AND studentparent.parentID = $user";
+    $sql = "SELECT studentparent.studentID,student.studentFN,student.studentLN , takenstudentslist.busID FROM parent INNER JOIN studentparent ON parent.parentID = studentparent.parentID AND parent.parentID = $user INNER JOIN student ON student.studentID = studentparent.studentID INNER JOIN takenstudentslist ON 
+takenstudentslist.studentID = studentparent.studentID";
 
     if (!$result = mysqli_query($db, $sql)) {
         printf("Errormessage: %s\n", mysqli_error($db));
@@ -24,21 +25,22 @@ function getChildrenIdName($user)
 
     if ($result->num_rows > 0) {
         // output data of each row
-        $i = 0;
+
         while ($row = $result->fetch_assoc()) {
 
 
-            $resultVal .= ("<option value = " . $row["studentID"] . ">" . $row["studentID"] . "</option><br>");
-            // echo "<option value = ''>".$resultArr[$i][0]=$row["studentLong"]."</option>";
-            //  echo "<option value = ''>".$resultArr[$i][0]=$row["studentLati"]."</option>";
+            $resultVal .= ("<option value =" . $row["busID"] . ">" . $row["studentID"] ." - ".$row["studentFN"]." ". $row["studentLN"]. "</option><br>");
 
 
-            $i++;
+
         }
 
     }
+    else{
+        $resultVal = "<option value='NA'>None of your children in buses.</option>";
+    }
 
     return $resultVal;
-} //id
+}
 
 echo getChildrenIdName($_GET['userId']);

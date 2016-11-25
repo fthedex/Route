@@ -161,22 +161,23 @@ echo "
 <div>
                 <label class='pGlobalFont' for='busesList'>Buses: </label>
 
-                <select class='boxShadow' id='busesList' name='busesList'>
-                    <option value='BUS201'>BUS201</option>
-                    <option value='BUS202'>BUS202</option>
+                <select onchange='updateBusDriverInfo();' id='parentChildrenSelect' class='boxShadow' id='busesList' name='busesList'>
+                
+               <script>
+               assignSelectWithChildrenAJAX();
+</script>
 
                 </select>
-                <div class='submitDiv'>Refresh List</div><br>
+                <div onclick='assignSelectWithChildrenAJAX(); updateBusDriverInfo();' class='submitDiv'>Refresh List</div><br>
 
 </div>
 
-                <div class='submitDiv'>Get Info</div>
               
 
                 <div class='padding20 '>
-<p  class='pGlobalFont textAlignCenter'>BUS ID: BUS201</p>
-                    <p class='pGlobalFont textAlignCenter'>Phone No: +962789629404</p>
-                    <p style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Name: Mohammed Khalil</p>
+<p id='childBusIdP' class='pGlobalFont textAlignCenter'></p>
+                    <p id='childBusDriverPhoneNo' class='pGlobalFont textAlignCenter'></p>
+                    <p id='childBusDriverName' style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'></p>
 
 </div>
 
