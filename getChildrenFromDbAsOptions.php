@@ -13,7 +13,7 @@ function getChildrenIdName($user)
     $db = Database::getConnection();
 
 
-    $sql = "SELECT studentID FROM studentsAwaitingList,driver WHERE studentsAwaitingList.busID = driver.driverBusID AND driver.driverID =$user";
+    $sql = "SELECT takenstudentslist.busID , takenstudentslist.studentID FROM takenstudentslist,studentparent WHERE studentparent.studentID = takenstudentslist.studentID AND studentparent.parentID = $user";
 
     if (!$result = mysqli_query($db, $sql)) {
         printf("Errormessage: %s\n", mysqli_error($db));
