@@ -47,6 +47,11 @@ studentsMarkers[title]=marker;
             markers[i].setMap(map);
         }
     }
+    
+    function setMapCenter(methodLocation){
+       MainMap.setCenter(methodLocation)
+    
+    }
 
     function setMapOnOne(map,key) {    //links a bus to a map
         markers[key].setMap(map);
@@ -95,6 +100,9 @@ studentsMarkers[title]=marker;
             var title = studentsLocations[i][0]; //title will be bus ID
 
             addMarker(Loc,title); //adding to buses global array (hash)
+            if(centerDriverBus)
+            setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+
 
         }
         
@@ -117,11 +125,16 @@ studentsMarkers[title]=marker;
                 var Loc = {lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])} //bus position
                 var title = BusesLocations[i][0]; //bus title (busID)
                 addMarkerBus(Loc,title); //adding it to buses array
+                if(centerDriverBus)
+            setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
 
             }
             else //if its already in the map , update the location only
             {
                 markers[key].setPosition({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+                if(centerDriverBus)
+                setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+
                 //set position updates the location of a marker(bus) on the map.
             }
 
@@ -215,23 +228,40 @@ studentsMarkers[title]=marker;
 
 </div>
 
+ 
+
 
 
 
                 </div>
+                
+           
+                                 <div class='centeringContainer'>
+   <div class=\"onoffswitch\">
+    <input onchange='alertUserCheck();' type=\"checkbox\" name=\"onoffswitch\" class=\"onoffswitch-checkbox\" id=\"centeringOnOff\" checked>
+    <label class=\"onoffswitch-label\" for=\"centeringOnOff\"></label>
+</div>
+</div>
+
+<p class='centeringP'>Centering ON/OFF.</p>
+
 
             </div>
+            
+            
+
 
             <div style=\"margin: 7px;padding: 0px;\" id=\"driverPanelBoard\" class=\"col-sm-5 boxShadow\"> <!-- MAP Container-->
-
-
+            
 
             </div>
+            
 
 
         </div>
 
     </div>
+    
     
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapDriver'
         async defer></script>

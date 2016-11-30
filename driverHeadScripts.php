@@ -75,8 +75,6 @@ function getAwaitingLocations($user){ //id,long,lat
             $resultArr[$i][1]=$row["studentLong"];
             $resultArr[$i][2]=$row["studentLati"];
 
-            // echo "<option value = ''>".$resultArr[$i][0]=$row["studentLong"]."</option>";
-            //  echo "<option value = ''>".$resultArr[$i][0]=$row["studentLati"]."</option>";
 
 
 
@@ -90,6 +88,19 @@ function getAwaitingLocations($user){ //id,long,lat
 
 echo "<script>
 
+
+var centerDriverBus = true; //user's choice , the default is true , (will be centering on page load) 
+
+function alertUserCheck(){      //change centering BOOL to user's choice!
+    if(document.getElementById('centeringOnOff').checked) {
+    centerDriverBus=true;
+    
+    //turn on centering
+} else {
+    centerDriverBus = false;
+}
+    
+}
 
     function removeSelectedElementFromDB(){
         
