@@ -36,6 +36,11 @@ echo "
     function clearMarkers() {  //clears all markers (buses) by putting null and using the method mentioned before
         setMapOnAll(null);
     }
+    
+    function setMapCenter(methodLocation){  //this version of centering differs from driver,student because there are options to take in mind(more than one student)
+       MainMap.setCenter(methodLocation)
+    
+    }
 
     function clearOneMarker(key) {  //deleting a bus on the map by passing the ID of that bus
         setMapOnOne(null,key);
@@ -61,6 +66,9 @@ echo "
             var title = BusesLocations[i][0]; //title will be bus ID
 
             addMarker(Loc,title); //adding to buses global array (hash)
+  
+
+                
 
         }
     }
@@ -78,11 +86,15 @@ echo "
                 var Loc = {lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])} //bus position
                 var title = BusesLocations[i][0]; //bus title (busID)
                 addMarker(Loc,title); //adding it to buses array
+                   if(centerChildren && (title==getSelectedValueOfChildren()))
+               setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
 
             }
             else //if its already in the map , update the location only
             {
                 markers[key].setPosition({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+                   if(centerChildren && (BusesLocations[i][0]==getSelectedValueOfChildren()))
+               setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
                 //set position updates the location of a marker(bus) on the map.
             }
 
@@ -114,16 +126,18 @@ echo "
         });
 
         //add every bus in database , AJAX is called before no need to call it again here
-        addMarkersFirstLoad();
+  
+        addMarkersFirstLoad(); 
 
         setTimeout(function(){  }, 200); //we wait # seconds because we just got the data
+        
         setInterval(function(){ //database AJAX communication every # seconds
 
 
-
+if(pageLoaded){  //don't do any operations if the children select isn't loaded yet !! this value knows if your page is loaded or not
             BusesLocations= getOnlineBuses(); //re-assigning (updating) the old values from the database
             addMarkersTimerLoad(); //update markers of the map with the new BusesLocations Array.
-
+}
 
 
 
@@ -155,7 +169,7 @@ echo "
         <div class='container'>
 
 
-            <div style='margin: 7px;min-height: 456px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
+            <div style='margin: 7px;padding:15px;min-height: 503px;' class='col-sm-6 backRgbaOnBlacks boxShadow'>
 <br><br>
 <div class='padding10 borderSmall'>
 <div>
@@ -182,11 +196,22 @@ echo "
 </div>
 
 
+              <div class='centeringContainer'>
+   <div class=\"onoffswitch\">
+    <input onchange='alertUserCheck();' type=\"checkbox\" name=\"onoffswitch\" class=\"onoffswitch-checkbox\" id=\"centeringOnOff\" checked>
+    <label class=\"onoffswitch-label\" for=\"centeringOnOff\"></label>
+</div>
+</div>
 
+<p class='centeringP'>Centering ON/OFF.</p>
 
                 </div>
 
+
+
             </div>
+            
+            
 
             <div style=\"margin: 7px;padding: 0px;\" id=\"parentsPanelBoard\" class=\"col-sm-5 boxShadow\"> <!-- MAP Container-->
 

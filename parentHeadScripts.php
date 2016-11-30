@@ -5,9 +5,25 @@
 echo "<script>
 
 
+
+
+var centerChildren = true; //user's choice , the default is true , (will be centering on page load) 
+var pageLoaded = false;
+function alertUserCheck(){      //change centering BOOL to user's choice!
+    if(document.getElementById('centeringOnOff').checked) {
+    centerChildren=true;
+    
+    //turn on centering
+} else {
+    centerChildren = false;
+}
+    
+}
+
     
     $(window).load(function() {
          updateBusDriverInfo();
+         pageLoaded =true;
 });
     
 
