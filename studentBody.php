@@ -168,7 +168,15 @@ echo "<script>
     </div>
     
     <div style='padding: 0px;' id='studentPanelBoard' class='container-fluid boxShadow'></div>
-    
+    <div class='centeringContainer'>
+     
+<div class=\"onoffswitch\">
+    <input type=\"checkbox\" name=\"onoffswitch\" class=\"onoffswitch-checkbox\" id=\"myonoffswitch\" checked>
+    <label class=\"onoffswitch-label\" for=\"myonoffswitch\"></label>
+</div>
+ 
+</div>
+<p class='centeringP'>Centering ON/OFF.</p>
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMapStudent'
         async defer></script>
 ";
