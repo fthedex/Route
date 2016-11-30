@@ -140,8 +140,8 @@ echo "
     </script>
         <div id='panelItemsContainer' class='container-fluid padding20'>
 
-<div style='margin-left:40%;' class='controlPanelItem'>
-        <div id='innerShowBusesFamily' class='centerElement'>
+<div class='controlPanelItem'>
+        <div class='textAlignCenter' id='innerShowBusesFamily'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
             <p class='pGlobalFont textAlignCenter'>Children maps</p>

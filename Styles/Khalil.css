@@ -229,11 +229,10 @@ position: relative;
 }
 
 .controlPanelItem{
+    padding-top:20px;
 width:142px;
     height: 130px;
-    float:left;
-   margin:5px;
-    position: relative;
+   margin:auto;
     cursor: pointer;
     /*border: 1px solid grey;*/
 

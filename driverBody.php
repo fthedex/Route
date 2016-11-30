@@ -180,8 +180,8 @@ studentsMarkers[title]=marker;
         <div id='panelItemsContainer' class='container-fluid padding20'>
 
 
-<div style='margin-left:39%;' class='controlPanelItem'>
-        <div id='innnerMap' class='centerElement'>
+<div class='controlPanelItem'>
+        <div class='textAlignCenter' id='innnerMap'>
             <span class='glyphicon glyphicon-map-marker'></span>
             <br>
             <p class='pGlobalFont'>Route(Map)</p>

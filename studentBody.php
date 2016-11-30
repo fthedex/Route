@@ -160,8 +160,8 @@ echo "<script>
         <div id='panelItemsContainer' class='container-fluid padding20'>
 
     
-<div style='margin-left:39%;' id='showMapStudent' class='controlPanelItem'>
-        <div id='innerShowBusStudent' class='centerElement'>
+<div id='showMapStudent' class='controlPanelItem'>
+        <div id='innerShowBusStudent' style='text-align: center'>
             <span class='glyphicon glyphicon-bed'></span>
             <br>
             <p class='pGlobalFont textAlignCenter'>Your map</p>
