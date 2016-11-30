@@ -68,7 +68,7 @@ echo "<script>
             var title = BusesLocations[i][0]; //title will be bus ID
 
             addMarker(Loc,title); //adding to buses global array (hash)
-            
+            if(centerStudentBus)
             setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
         }
     }
@@ -87,7 +87,9 @@ echo "<script>
                 var title = BusesLocations[i][0]; //bus title (busID)
                 addMarker(Loc,title); //adding it to buses array
               
+              if(centerStudentBus)
                 setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+              
 
 
             }
@@ -95,6 +97,7 @@ echo "<script>
             {
                 markers[key].setPosition({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
                 //set position updates the location of a marker(bus) on the map.
+                if(centerStudentBus)
                 setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
 
             }
@@ -171,8 +174,8 @@ echo "<script>
     <div class='centeringContainer'>
      
 <div class=\"onoffswitch\">
-    <input type=\"checkbox\" name=\"onoffswitch\" class=\"onoffswitch-checkbox\" id=\"myonoffswitch\" checked>
-    <label class=\"onoffswitch-label\" for=\"myonoffswitch\"></label>
+    <input onchange='alertUserCheck();' type=\"checkbox\" name=\"onoffswitch\" class=\"onoffswitch-checkbox\" id=\"centeringOnOff\" checked>
+    <label class=\"onoffswitch-label\" for=\"centeringOnOff\"></label>
 </div>
  
 </div>

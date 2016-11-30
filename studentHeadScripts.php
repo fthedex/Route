@@ -3,6 +3,19 @@
 
 echo "<script>
 
+var centerStudentBus = true;
+
+function alertUserCheck(){
+    if(document.getElementById('centeringOnOff').checked) {
+    centerStudentBus=true;
+    
+    //turn on centering
+} else {
+    centerStudentBus = false;
+}
+    
+}
+
         function getOnlineBusesAJAX(){            //Communicating with database using AJAX.
 
             $.ajax({
