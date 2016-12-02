@@ -17,18 +17,26 @@ var studentsMarkers = {};
     var BusesLocations = getOnlineBuses(); //Assigning current buses in database to BusesLocations
 
 
-function alertstudentBusLocation(){
 
-    var directionsService = new google.maps.DirectionsService;  //google maps routing libraries
-    var directionsDisplay = new google.maps.DirectionsRenderer;
-    
+var directionsDisplay;  //they are out of scope because we need to access them so we can delete previous route and re draw it once a student is checked!
+  var directionsService;
+function alertstudentBusLocation(){
+if(Object.keys(studentsMarkers).length==0) //if there are not students left to draw route for , just return (ELSE WILL BUG)
+return;
+
+     directionsService = new google.maps.DirectionsService;  //google maps routing libraries
+        directionsDisplay = new google.maps.DirectionsRenderer;
+
     directionsDisplay.setMap(MainMap);  //set routing map to MainMap
 
-    var waypts = [];  //students markers to pass to route api
+  
+   var waypts = [];  //students markers to pass to route api
 
     var keysStudents = Object.keys(studentsMarkers); //hashes of students in order to put in way points
     var driverKey = Object.keys(markers);   //driver hash to put source of route
     
+    
+ 
    
     
     busLng = markers[driverKey[0]].getPosition().lng();
@@ -66,7 +74,12 @@ function alertstudentBusLocation(){
                 directionsDisplay.setDirections(response);
 
             } else {
-                window.alert('Directions request failed due to ' + status);
+            
+         if(status=='ZERO_RESULTS'){
+                 alert('Either no students to draw route for or the students locations are not eligible for route drawing!')
+                 }
+            else
+                window.alert('ERROR ' + status);
             }
         });
         
@@ -293,7 +306,7 @@ alert('stopped interval!');
                 <select class='boxShadow' id='studentsList' name='studentsList'>".getAwaitingAsOptions($globalUser->getUsername())."
 
 </select>
-                <div id='checkButton' onclick='removeSelectedElementFromDB();removeFromMap();removeFromList();' class='submitDiv'>Check</div>
+                <div id='checkButton' onclick='removeSelectedElementFromDB();removeFromMap();removeFromList();alertstudentBusLocation();' class='submitDiv'>Check</div>
               
 
                 <div class='padding20 '>

@@ -88,7 +88,6 @@ function getAwaitingLocations($user){ //id,long,lat
 
 echo "<script>
 
-
 var centerDriverBus = true; //user's choice , the default is true , (will be centering on page load) 
 
 function alertUserCheck(){      //change centering BOOL to user's choice!
@@ -117,6 +116,11 @@ ajaxFromAwaitingToTaken();
 
         var key = e.options[e.selectedIndex].value;
         delNotBugged(key);
+        
+    
+        
+        delete studentsMarkers[key];
+       directionsDisplay.setMap(null);
 
     }
 
