@@ -100,8 +100,7 @@ studentsMarkers[title]=marker;
             var title = studentsLocations[i][0]; //title will be bus ID
 
             addMarker(Loc,title); //adding to buses global array (hash)
-            if(centerDriverBus)
-            setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
+
 
 
         }

@@ -171,14 +171,19 @@ ajaxFromAwaitingToTaken();
     
     function ajaxFromAwaitingToTaken(){
            var e = document.getElementById('studentsList');
-
+          var driverInfo = getOnlineBuses();
+          var studentBusId = driverInfo[0][0];
+       
+         
+           
+           
          var studentId = e.options[e.selectedIndex].value;
 
         if(studentId=='NA')
             return;
               $.ajax({
             method: 'GET',
-            url: 'moveFromAwaitingToTaken.php?userId='+studentId+'&busId=".$globalUser->getUsername()."',  //PHP FILE TO GET YOU DATE
+            url: 'moveFromAwaitingToTaken.php?userId='+studentId+'&busId='+studentBusId,  //PHP FILE TO GET YOU DATE
             data: {}
         })
             .done(function (data) {
