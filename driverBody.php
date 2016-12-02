@@ -16,6 +16,62 @@ var studentsMarkers = {};
     
     var BusesLocations = getOnlineBuses(); //Assigning current buses in database to BusesLocations
 
+
+function alertstudentBusLocation(){
+
+    var directionsService = new google.maps.DirectionsService;  //google maps routing libraries
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    
+    directionsDisplay.setMap(MainMap);  //set routing map to MainMap
+
+    var waypts = [];  //students markers to pass to route api
+
+    var keysStudents = Object.keys(studentsMarkers); //hashes of students in order to put in way points
+    var driverKey = Object.keys(markers);   //driver hash to put source of route
+    
+   
+    
+    busLng = markers[driverKey[0]].getPosition().lng();
+    busLat = markers[driverKey[0]].getPosition().lat();
+
+
+   for(var j=0;j<keysStudents.length;j++){ //looping through all markers
+   
+  var studentLng = studentsMarkers[keysStudents[j]].getPosition().lng();  //transferring from studentsMarkers to ways array 
+  var studentLat = studentsMarkers[keysStudents[j]].getPosition().lat()   //transferring will be passed to route API
+   
+    waypts.push({
+            location: new google.maps.LatLng(studentLat, studentLng),    //transferring
+            stopover: true
+        });
+       
+
+  
+  }
+
+  var studentsHashesSize = keysStudents.length;                 //to know the last students in the hashes (destination)
+  var lastStudentLng =  studentsMarkers[keysStudents[studentsHashesSize-1]].getPosition().lng();
+  var lastStudentLat =  studentsMarkers[keysStudents[studentsHashesSize-1]].getPosition().lat();
+
+  //we need last student info because we need a destination for our route!
+  
+        directionsService.route({   //route settings 
+            origin: new google.maps.LatLng(busLat, busLng), //will be the bus location
+            destination: new google.maps.LatLng(lastStudentLat, lastStudentLng), //the last student
+            waypoints: waypts, //all students
+            optimizeWaypoints: true, //optimizing route
+            travelMode: 'DRIVING' //traveling method which is driving in our scenario
+        }, function(response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+        
+        
+ }
     
      function addMarker(location,title) {  //Adding a bus to the map , and to markers hash
         var marker = new google.maps.Marker({
@@ -187,6 +243,27 @@ studentsMarkers[title]=marker;
 
     }
     
+    
+var interval = null;
+interval = setInterval(updateDiv,200);           
+
+function updateDiv(){              //keep checking for the students as well as the driver if they are loaded 
+var driverKey = Object.keys(markers); 
+var keysStudents = Object.keys(studentsMarkers);
+
+if(markers[driverKey[0]]!=undefined && studentsMarkers[keysStudents[0]]!=undefined){//if yes: we can now draw the route
+
+alertstudentBusLocation();
+clearInterval(interval); //stop the interval because we did draw the route!
+}
+}
+
+/*
+setTimeout(function(){
+clearInterval(interval);
+alert('stopped interval!');
+},5000);*/
+
 </script>
 
         <div id='panelItemsContainer' class='container-fluid padding20'>

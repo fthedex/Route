@@ -78,30 +78,26 @@
 
         var waypts = [];
         waypts.push({
-            location: new google.maps.LatLng(31.850033, 35.6500523),
+            location: new google.maps.LatLng(31.9774332,35.8456162),
             stopover: true
         });
 
         waypts.push({
-            location: new google.maps.LatLng(32.850033, 35.6500523),
+            location: new google.maps.LatLng(31.9805839,35.8400952),
             stopover: true
         });
 
         waypts.push({
-            location: new google.maps.LatLng(33.850033, 35.6500523),
+            location: new google.maps.LatLng(31.9744539,35.867201),
             stopover: true
         });
 
 
-        waypts.push({
-            location: new google.maps.LatLng(33.850033, 36.6500523),
-            stopover: true
-        });
 
 
         directionsService.route({
-            origin: new google.maps.LatLng(31.850033, 35.6500523),
-            destination: new google.maps.LatLng(33.850033, 36.6500523),
+            origin: new google.maps.LatLng(31.9774332,35.8456162),
+            destination: new google.maps.LatLng(31.9744539,35.867201),
             waypoints: waypts,
             optimizeWaypoints: true,
             travelMode: 'DRIVING'
