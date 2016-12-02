@@ -1,127 +1,123 @@
-
-<?php
-require "user.php";
-$globalUser = new user;
-if($globalUser->loggedIn()==false){
-    header("location:Login.php");
-    exit();
-}
-?>
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Route</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="Styles/Khalil.css">
-
-
-    <?php
-    if($globalUser->loggedIn()){
-
-        if($globalUser->getUserType()=="1"){ //driver , we echo his map function , should accept markers (dynamic) soon to be developped
-
-            include("driverHeadScripts.php");
+    <title>Waypoints in directions</title>
+    <style>
+        #right-panel {
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
         }
-        else if($globalUser->getUserType()=="2"){ //parent
-            include("parentHeadScripts.php");
 
-        } //same for the parent
-        else  //student
-        {
-            include("studentHeadScripts.php");
-
+        #right-panel select, #right-panel input {
+            font-size: 15px;
         }
-    }
-    ?>
 
+        #right-panel select {
+            width: 100%;
+        }
 
+        #right-panel i {
+            font-size: 12px;
+        }
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            height: 100%;
+            float: left;
+            width: 70%;
+            height: 100%;
+        }
+        #right-panel {
+            margin: 20px;
+            border-width: 2px;
+            width: 20%;
+            height: 400px;
+            float: left;
+            text-align: left;
+            padding-top: 0;
+        }
+        #directions-panel {
+            margin-top: 10px;
+            background-color: #FFEE77;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
+<div id="map"></div>
+<div id="right-panel">
+    <div>
 
-<nav id="pageNav" style="padding-top:10px;margin: 0px;border-radius: 0px;border:none;background-color: rgb(10, 36, 64);box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);min-height: 90px;" class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button style="background-color:  rgb(10, 36, 64);" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div style="margin-right:70px;margin-left:20px;width:40px;padding:0px;" class="boxShadowTransparent">
-                <img class="fullWidth" src="logoCropped.png" />
-            </div>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">HOME</a></li>
-
-                <li style="min-height: 60px;"  ><a class="shadowDagger"  style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">CONTACT</a></li>
-                <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="ControlPanel.php">CONTROL PANEL</a></li>
-
-                <li style="min-height: 60px;" ><a class="shadowDagger" style="color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:7px;" href="/Route">ABOUT US</a></li>
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <?php
-                if($globalUser->loggedIn()){
-                    echo "<li><p  style=\"color: yellow; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin:18px 12px 12px 12px;\" ><span class=\"glyphicon glyphicon-user\"></span> ".strtoupper($_SESSION['routeUsername'])."</p></li>";
-
-
-                    echo "<li><a onmouseover=\"this.style.color='red'\" onmouseleave=\"this.style.color='white'\"style=\"color: white; font-family: 'Lobster', cursive;
-    font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;\" href=\"logout.php\"><span class=\"glyphicon glyphicon-log-out\"></span> Logout</a></li>";
-                }
-                else
-                    echo "<li><a onmouseover=\"this.style.color='#00bd0a'\" onmouseleave=\"this.style.color='white'\"style=\"color: white; font-family: 'Lobster', cursive; font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;\" href=\"Login.php\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>";
-                ?>
-                <!--<li><a onmouseover="this.style.color='#00bd0a'" onmouseleave="this.style.color='white'"style="color: white; font-family: 'Lobster', cursive;
-font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
-            </ul>
-        </div>
+        <input type="submit" id="submit">
     </div>
-
-</nav>
-
-
-
-<div style="padding:0px;" class="loginBody container-fluid">
-
-
-    <?php
-
-echo "<p style='display:none;' id='ajaxJSON'>[[\"BUS0\",\"-1\",\"-1\"]]</p>";
-if($globalUser->getUserType()=="3"){
-   include("studentBody.php");
-}
-else if($globalUser->getUserType()=="1"){
-    include("driverBody.php");
-
-}
-else if($globalUser->getUserType()=="2"){
-    include("parentBody.php");
-
-}
-
-?>
-
-
-
-
+    <div id="directions-panel"></div>
 </div>
+<script>
+    function initMap() {
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: {lat: 31.3265, lng: 35.3266}
+        });
+        directionsDisplay.setMap(map);
+
+        document.getElementById('submit').addEventListener('click', function() {
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+        });
+    }
+
+    function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 
+        var waypts = [];
+        waypts.push({
+            location: new google.maps.LatLng(31.850033, 35.6500523),
+            stopover: true
+        });
+
+        waypts.push({
+            location: new google.maps.LatLng(32.850033, 35.6500523),
+            stopover: true
+        });
+
+        waypts.push({
+            location: new google.maps.LatLng(33.850033, 35.6500523),
+            stopover: true
+        });
+
+
+        waypts.push({
+            location: new google.maps.LatLng(33.850033, 36.6500523),
+            stopover: true
+        });
+
+
+        directionsService.route({
+            origin: new google.maps.LatLng(31.850033, 35.6500523),
+            destination: new google.maps.LatLng(33.850033, 36.6500523),
+            waypoints: waypts,
+            optimizeWaypoints: true,
+            travelMode: 'DRIVING'
+        }, function(response, status) {
+            if (status === 'OK') {
+                directionsDisplay.setDirections(response);
+
+            } else {
+                window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcacGx1xEtAaYseE0M9Q3VAy5xx3bVtl0&callback=initMap">
+</script>
 </body>
-
-
 </html>
