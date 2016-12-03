@@ -30,6 +30,8 @@ function alertUserCheck(){      //change centering BOOL to user's choice!
 
         function updateBusDriverInfo(){
 
+            if(getSelectedValueOfChildren()=='NA') //he has no children in taken table!
+                return;
             var httpURL = 'getBusDriverInfo.php?userId='+getSelectedValueOfChildren();
          
                 $.ajax({
@@ -41,6 +43,7 @@ function alertUserCheck(){      //change centering BOOL to user's choice!
             
               var phoneNameArray = data.split(',');
     
+              
             $('#childBusIdP').html('BUS ID: '+getSelectedValueOfChildren());
             $('#childBusDriverPhoneNo').html('BUS PHONE NO: '+phoneNameArray[0]);
             $('#childBusDriverName').html('BUS DRIVER NAME: '+phoneNameArray[1]);
