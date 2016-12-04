@@ -18,7 +18,10 @@ var studentsMarkers = {};
 var directionsDisplay;  //they are out of scope because we need to access them so we can delete previous route and re draw it once a student is checked!
   var directionsService;
 function alertstudentBusLocation(){
-if(Object.keys(studentsMarkers).length==0) //if there are not students left to draw route for , just return (ELSE WILL BUG)
+
+
+
+if(Object.keys(studentsMarkers).length==0 || Object.keys(markers).length==0) //if there are not students left to draw route for , just return (ELSE WILL BUG)
 return;
      directionsService = new google.maps.DirectionsService;  //google maps routing libraries
         directionsDisplay = new google.maps.DirectionsRenderer;
@@ -199,9 +202,11 @@ studentsMarkers[title]=marker;
 var interval = null;
 interval = setInterval(updateDiv,200);           
 function updateDiv(){              //keep checking for the students as well as the driver if they are loaded 
+/*
 var driverKey = Object.keys(markers); 
-var keysStudents = Object.keys(studentsMarkers);
-if(markers[driverKey[0]]!=undefined && studentsMarkers[keysStudents[0]]!=undefined){//if yes: we can now draw the route
+var keysStudents = Object.keys(studentsMarkers);*/
+
+if(BusesLocations[0][0]!=undefined && BusesLocations[0][0]!='99'){//if yes: we can now draw the route
 alertstudentBusLocation();
 clearInterval(interval); //stop the interval because we did draw the route!
 }
