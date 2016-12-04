@@ -99,7 +99,7 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
 
     <?php
 
-    echo "<p style='display:none;' id='ajaxJSON'>[[\"BUS0\",\"-1\",\"-1\"]]</p>";
+    echo "<p style='display:none;' id='ajaxJSON'>[[\"99\",\"-1\",\"-1\"]]</p>";
     if($globalUser->getUserType()=="3"){
         include("studentBody.php");
     }

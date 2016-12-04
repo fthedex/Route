@@ -244,6 +244,20 @@ ajaxFromAwaitingToTaken();
     }
 
 
+    function getOnlineBusesNoAjax(){
+
+               //Every time this method is called it updates the Element containing buses
+
+        var onlineBuses = document.getElementById('ajaxJSON').innerHTML;   //we assign the buses so we can parse the text into an array(JSON
+
+        var busesArray =  JSON.parse(onlineBuses);     //Parsing TEXT into a JSON(Normal Array)
+
+
+        return busesArray;  //returning the array
+
+    }
+
+
 
 
 
