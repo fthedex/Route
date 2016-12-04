@@ -86,14 +86,14 @@ echo "
                 var Loc = {lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])} //bus position
                 var title = BusesLocations[i][0]; //bus title (busID)
                 addMarker(Loc,title); //adding it to buses array
-                   if(centerChildren && (title==getSelectedValueOfChildren()))
+                   if(centerChildren && (title==getSelectedValueOfChildren()) && key!=undefined)
                setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
 
             }
             else //if its already in the map , update the location only
             {
                 markers[key].setPosition({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
-                   if(centerChildren && (BusesLocations[i][0]==getSelectedValueOfChildren()))
+                   if(centerChildren && (BusesLocations[i][0]==getSelectedValueOfChildren()) && key!=undefined)
                setMapCenter({lat: parseFloat(BusesLocations[i][2]), lng: parseFloat(BusesLocations[i][1])});
                 //set position updates the location of a marker(bus) on the map.
             }

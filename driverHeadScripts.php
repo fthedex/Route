@@ -120,6 +120,7 @@ ajaxFromAwaitingToTaken();
     
         
         delete studentsMarkers[key];
+        if(directionsDisplay!=null) //if there is a drawn route , delete it
        directionsDisplay.setMap(null);
 
     }
@@ -175,19 +176,17 @@ ajaxFromAwaitingToTaken();
     
     function ajaxFromAwaitingToTaken(){
            var e = document.getElementById('studentsList');
-          var driverInfo = getOnlineBuses();
-          var studentBusId = driverInfo[0][0];
+       /*   var driverInfo = getOnlineBuses(); //will fail if there is no bus! ,MODIFY QUERY!
+          var studentBusId = driverInfo[0][0];*/
        
-         
-           
-           
          var studentId = e.options[e.selectedIndex].value;
 
         if(studentId=='NA')
             return;
+  
               $.ajax({
             method: 'GET',
-            url: 'moveFromAwaitingToTaken.php?userId='+studentId+'&busId='+studentBusId,  //PHP FILE TO GET YOU DATE
+            url: 'moveFromAwaitingToTaken.php?userId='+studentId,  
             data: {}
         })
             .done(function (data) {

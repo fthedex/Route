@@ -17,12 +17,20 @@ var studentsMarkers = {};
     var BusesLocations = getOnlineBuses(); //Assigning current buses in database to BusesLocations
 var directionsDisplay;  //they are out of scope because we need to access them so we can delete previous route and re draw it once a student is checked!
   var directionsService;
-function alertstudentBusLocation(){
+function drawStudentsRoute(){
 
-
-
-if(Object.keys(studentsMarkers).length==0 || Object.keys(markers).length==0) //if there are not students left to draw route for , just return (ELSE WILL BUG)
+if(BusesLocations[0][0]==undefined && BusesLocations[0][0]=='99') //no buses
 return;
+
+
+if(studentsLocations[0][0]==undefined)
+return;
+//no students
+if(Object.keys(studentsMarkers).length==0) //if there are not students left to draw route for , just return (ELSE WILL BUG)
+return;
+
+
+alert('passed the validation cases!');
      directionsService = new google.maps.DirectionsService;  //google maps routing libraries
         directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(MainMap);  //set routing map to MainMap
@@ -205,9 +213,10 @@ function updateDiv(){              //keep checking for the students as well as t
 /*
 var driverKey = Object.keys(markers); 
 var keysStudents = Object.keys(studentsMarkers);*/
-
+//99 is the default , meaning there is no bus
+//undefined also means no bus!
 if(BusesLocations[0][0]!=undefined && BusesLocations[0][0]!='99'){//if yes: we can now draw the route
-alertstudentBusLocation();
+drawStudentsRoute();
 clearInterval(interval); //stop the interval because we did draw the route!
 }
 }
@@ -236,7 +245,7 @@ alert('stopped interval!');
                 <label class='pGlobalFont' for='studentsList'>Students: </label>
                 <select class='boxShadow' id='studentsList' name='studentsList'>".getAwaitingAsOptions($globalUser->getUsername())."
 </select>
-                <div id='checkButton' onclick='removeSelectedElementFromDB();removeFromMap();removeFromList();alertstudentBusLocation();' class='submitDiv'>Check</div>
+                <div id='checkButton' onclick='removeSelectedElementFromDB();removeFromMap();removeFromList();drawStudentsRoute();' class='submitDiv'>Check</div>
               
                 <div class='padding20 '>
                     <p id='date' style='color:red;margin-bottom: 23px;' class='pGlobalFont textAlignCenter textShadow'>Time:".getDatePhp()."
