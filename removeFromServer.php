@@ -14,7 +14,7 @@
     $busID = $_GET["busId"];
 
 
-    $query ="DELETE FROM updateBusLocation WHERE busID=$busID";
+    $query ="DELETE FROM updatebuslocation WHERE busID=$busID";
 
     mysqli_query($db, $query) or die (mysqli_error($db));
 

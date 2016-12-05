@@ -8,7 +8,7 @@ $userId = $_GET['userId'];
 $db = Database::getConnection();
 
 
-$sql ="SELECT * FROM updateBusLocation,driver WHERE updateBusLocation.busID = driver.driverBusID AND driver.driverID = $userId";
+$sql ="SELECT * FROM updatebuslocation,driver WHERE updatebuslocation.busID = driver.driverBusID AND driver.driverID = $userId";
 
 //$result = $db->query($sql);
 

@@ -8,7 +8,7 @@ $userId = $_GET['userId'];
 $db = Database::getConnection();
 
 
-$sql ="SELECT * FROM updateBusLocation,student WHERE tmwBusId = busID AND studentID = $userId";
+$sql ="SELECT * FROM updatebuslocation,student WHERE tmwBusId = busID AND studentID = $userId";
 
 //$result = $db->query($sql);
 

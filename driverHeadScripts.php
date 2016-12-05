@@ -18,7 +18,7 @@ function getAwaitingAsOptions($user)
     $db = Database::getConnection();
 
 
-    $sql = "SELECT studentID FROM studentsAwaitingList,driver WHERE studentsAwaitingList.busID = driver.driverBusID AND driver.driverID =$user";
+    $sql = "SELECT studentID FROM studentsawaitinglist,driver WHERE studentsawaitinglist.busID = driver.driverBusID AND driver.driverID =$user";
 
     if (!$result = mysqli_query($db, $sql)) {
         printf("Errormessage: %s\n", mysqli_error($db));
@@ -56,7 +56,7 @@ function getAwaitingLocations($user){ //id,long,lat
     $db = Database::getConnection();
 
 
-    $sql ="SELECT studentID,studentLong,studentLati FROM studentsAwaitingList,driver WHERE studentsAwaitingList.busID = driver.driverBusID AND driver.driverID =$user";
+    $sql ="SELECT studentID,studentLong,studentLati FROM studentsawaitinglist,driver WHERE studentsawaitinglist.busID = driver.driverBusID AND driver.driverID =$user";
 
     if (!$result = mysqli_query($db, $sql)) {
         printf("Errormessage: %s\n", mysqli_error($db));

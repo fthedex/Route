@@ -7,7 +7,7 @@ $resultArr = array(array());
 $db = Database::getConnection();
 
 
-$sql ="SELECT * FROM updateBusLocation";
+$sql ="SELECT * FROM updatebuslocation";
 
 $result = $db->query($sql);
 

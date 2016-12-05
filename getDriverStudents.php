@@ -18,7 +18,7 @@ $user = $globalUser->getUsername();
 
 $res = "";
 
-    $sql ="SELECT studentID FROM studentsAwaitingList,driver WHERE studentsAwaitingList.busID = driver.driverBusID AND driver.driverID =$user";
+    $sql ="SELECT studentID FROM studentsawaitinglist,driver WHERE studentsawaitinglist.busID = driver.driverBusID AND driver.driverID =$user";
 
     if (!$result = mysqli_query($db, $sql)) {
         printf("Errormessage: %s\n", mysqli_error($db));

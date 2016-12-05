@@ -19,7 +19,7 @@
     echo $lat;
 
 
-    $query = "Insert into updateBusLocation(busID,busLong,busLati) values ('$busID','$lng','$lat');";
+    $query = "Insert into updatebuslocation(busID,busLong,busLati) values ('$busID','$lng','$lat');";
 
 
 

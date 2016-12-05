@@ -8,7 +8,7 @@ $userId = $_GET['userId'];
 $db = Database::getConnection();
 
 
-$sql ="SELECT updateBusLocation.busID,updateBusLocation.busLong,updateBusLocation.busLati FROM updateBusLocation,takenstudentslist,studentparent WHERE updateBusLocation.busID = takenstudentslist.busID AND studentparent.studentID = takenstudentslist.studentID AND studentparent.parentID = $userId";
+$sql ="SELECT updatebuslocation.busID,updatebuslocation.busLong,updatebuslocation.busLati FROM updatebuslocation,takenstudentslist,studentparent WHERE updatebuslocation.busID = takenstudentslist.busID AND studentparent.studentID = takenstudentslist.studentID AND studentparent.parentID = $userId";
 
 //$result = $db->query($sql);
 

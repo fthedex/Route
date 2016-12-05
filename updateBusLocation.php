@@ -14,7 +14,7 @@
     $lng = $_GET["busLng"];
     $lat = $_GET["busLat"];
 
-    $query = "UPDATE updateBusLocation SET busLong=$lng,busLati=$lat WHERE busID=$busID";
+    $query = "UPDATE updatebuslocation SET busLong=$lng,busLati=$lat WHERE busID=$busID";
 
 
     mysqli_query($db, $query) or die (mysqli_error($db));
