@@ -10,11 +10,12 @@
 
     $db = Database::getConnection();
 
-    $busID = $_GET["busId"];
+    $driverId = $_GET["busId"];
     $lng = $_GET["busLng"];
     $lat = $_GET["busLat"];
 
-    $query = "UPDATE updatebuslocation SET busLong=$lng,busLati=$lat WHERE busID=$busID";
+
+    $query = "UPDATE updatebuslocation,driver set updatebuslocation.busLong=$lng , updatebuslocation.busLati=$lat WHERE driver.driverID = $driverId AND driver.driverBusID = updatebuslocation.busID;";
 
 
     mysqli_query($db, $query) or die (mysqli_error($db));

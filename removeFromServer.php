@@ -11,13 +11,27 @@
 
     $db = Database::getConnection();
 
-    $busID = $_GET["busId"];
+    $driverId = $_GET["busId"];
 
 
-    $query ="DELETE FROM updatebuslocation WHERE busID=$busID";
+
+$userBusQuery = "SELECT driver.driverBusID FROM driver WHERE driver.driverID = $driverId";
+
+$result = mysqli_query($db, $userBusQuery) or die (mysqli_error($db));
+$driverBus = null;
+if($result->num_rows>0){
+
+    while($row = $result->fetch_assoc()){
+
+        $driverBus = $row['driverBusID'];
+    }
+
+
+}
+
+if($result!=null) {
+
+    $query = "DELETE FROM updatebuslocation WHERE busID=$driverBus";
 
     mysqli_query($db, $query) or die (mysqli_error($db));
-
-
-
-
+}

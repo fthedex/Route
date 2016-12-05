@@ -10,21 +10,32 @@
 
     $db = Database::getConnection();
 
-    $busID = $_GET["busId"];
+    $driverId = $_GET["busId"];
     $lng = $_GET["busLng"];
     $lat = $_GET["busLat"];
 
-    echo $busID;
-    echo $lng;
-    echo $lat;
+    $userBusQuery = "SELECT driver.driverBusID FROM driver WHERE driver.driverID = $driverId";
+
+$result =  mysqli_query($db, $userBusQuery) or die (mysqli_error($db));  // we first know what bus to add then we pass it to another query in order to insert it into updateBusLoaction table;
+$driverBus = null;
+if ($result->num_rows > 0) {
+    // output data of each row
+
+    while($row = $result->fetch_assoc()) {
 
 
-    $query = "Insert into updatebuslocation(busID,busLong,busLati) values ('$busID','$lng','$lat');";
+        $driverBus=$row["driverBusID"];
 
 
+    }
 
-    mysqli_query($db, $query) or die (mysqli_error($db));
+}
 
+if($driverBus!=null) {
+    $addToServerQuery = "Insert into updatebuslocation(busID,busLong,busLati) values ('$driverBus','$lng','$lat')";
+
+    mysqli_query($db, $addToServerQuery) or die (mysqli_error($db));
+}
 
 
 
