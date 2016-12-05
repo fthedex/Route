@@ -215,8 +215,13 @@ var keysStudents = Object.keys(studentsMarkers);*/
 //99 is the default , meaning there is no bus
 //undefined also means no bus!
 if(BusesLocations[0][0]!=undefined && BusesLocations[0][0]!='99'){//if yes: we can now draw the route
+if(BusesLocations[0][1]!='36.2384' && BusesLocations[0][2]!='30.5852'){
+// now check if its not the default!
+//  setLng(36.2384);
+       // setLat(30.5852);
 drawStudentsRoute();
 clearInterval(interval); //stop the interval because we did draw the route!
+}
 }
 }
 /*
