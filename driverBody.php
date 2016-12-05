@@ -30,7 +30,6 @@ if(Object.keys(studentsMarkers).length==0) //if there are not students left to d
 return;
 
 
-alert('passed the validation cases!');
      directionsService = new google.maps.DirectionsService;  //google maps routing libraries
         directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(MainMap);  //set routing map to MainMap
