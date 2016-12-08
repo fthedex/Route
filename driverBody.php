@@ -51,11 +51,16 @@ return;
    
     waypts.push({
             location: new google.maps.LatLng(studentLat, studentLng),    //transferring
-            stopover: true
+            stopover: true,
+            
+            
         });
        
   
   }
+  
+
+
   var studentsHashesSize = keysStudents.length;                 //to know the last students in the hashes (destination)
   var lastStudentLng =  studentsMarkers[keysStudents[studentsHashesSize-1]].getPosition().lng();
   var lastStudentLat =  studentsMarkers[keysStudents[studentsHashesSize-1]].getPosition().lat();
@@ -82,6 +87,9 @@ return;
         
         
  }
+ 
+
+
     
      function addMarker(location,title) {  //Adding a bus to the map , and to markers hash
         var marker = new google.maps.Marker({
@@ -89,8 +97,19 @@ return;
             map: MainMap,
             title: title,
             icon: \"studentMarker.png\",
+            zIndex:9999
         });
 studentsMarkers[title]=marker;
+
+ var infowindow = new google.maps.InfoWindow({ //settings message box for each student
+          content: title
+        });
+
+
+marker.addListener('click', function() {  //showing the id of the student when its clicked
+          infowindow.open(MainMap, marker);
+        });
+
     }
     
         function addMarkerBus(location,title) {  //Adding a bus to the map , and to markers hash
@@ -99,6 +118,7 @@ studentsMarkers[title]=marker;
             map: MainMap,
             title: title,
             icon: \"bus2ico.png\",
+            zIndex:99
         });
         markers[title]=marker;
     }
