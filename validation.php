@@ -13,7 +13,7 @@ function validInfoFromDb($userInfoName,$userInfoPassword){
     $db = Database::getConnection();
 
 
-    $sql = "SELECT * FROM accountinfo WHERE accountInfoID='$userInfoName'";
+    $sql = "SELECT * FROM accountInfo WHERE accountInfoID='$userInfoName'";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
