@@ -33,13 +33,10 @@ if($globalUser->loggedIn()==false){
             include("parentHeadScripts.php");
 
         } //same for the parent
-        else if($globalUser->getUserType()=="3")  //student
+        else  //student
         {
             include("studentHeadScripts.php");
 
-        }
-        else{
-            include("adminHeadScripts.php");
         }
     }
     ?>
@@ -113,9 +110,6 @@ font-family: 'Anton', sans-serif;font-size:24px;margin-top:5px;" href="Login.php
     else if($globalUser->getUserType()=="2"){
         include("parentBody.php");
 
-    }
-    else{
-       include("adminBody.php");
     }
 
     ?>
