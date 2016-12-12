@@ -15,7 +15,7 @@ function getDataRow($userInfoName){
 
 
 
-    $sql = "SELECT * FROM accountInfo WHERE accountInfoID='$userInfoName'";
+    $sql = "SELECT * FROM accountinfo WHERE accountInfoID='$userInfoName'";
     $result = $db->query($sql);
 
     if ($result->num_rows > 0) {
