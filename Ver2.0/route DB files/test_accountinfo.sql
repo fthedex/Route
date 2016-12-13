@@ -1,0 +1,55 @@
+CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `test`;
+-- MySQL dump 10.13  Distrib 5.7.13, for linux-glibc2.5 (x86_64)
+--
+-- Host: localhost    Database: test
+-- ------------------------------------------------------
+-- Server version	5.5.52-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `accountinfo`
+--
+
+DROP TABLE IF EXISTS `accountinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `accountinfo` (
+  `accountInfoID` int(11) NOT NULL,
+  `accountPassword` varchar(255) NOT NULL,
+  `accountType` int(11) DEFAULT NULL,
+  `accountSalt` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`accountInfoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `accountinfo`
+--
+
+LOCK TABLES `accountinfo` WRITE;
+/*!40000 ALTER TABLE `accountinfo` DISABLE KEYS */;
+INSERT INTO `accountinfo` VALUES (300001,'f7a743557e7ef8db7bc0aea7b46f9fd9094e60bc1a8ef0945cdd80b9da11341f',1,'3nvio'),(20160001,'35151ccb9e74141ef6a7ea2878b0e840a3b8724d4d013cd8938ba11af5932479',2,'jqiy9'),(20161001,'0a4c95c30bf00e08f621c3b8eaf126d3e927779e32ddb88c61438683bcb7b9f4',3,'sh7nz'),(200200200,'5f16587d3c1a68add215a36b3412dcac6f1fcf7ebe3050a6f81ba21def623942',4,'mqexb'),(300300300,'50b5c3300aa5ffd9c43d1f866bc7422a29c56239cbf46fe577e3ae1fba000be3',4,'cy6gl');
+/*!40000 ALTER TABLE `accountinfo` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2016-12-13 23:33:08
